@@ -1,4 +1,5 @@
 ﻿using iTOLEDO.Classes;
+using iTOLODO.Classes;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -12,7 +13,6 @@ namespace iTOLODO
     class Program
     {
         static bool _continue;
-        static bool _Saved;
         static SerialPort _serialPort;
         static Measures _measures;
         static String stringFromTOLEDO = "";
@@ -21,8 +21,7 @@ namespace iTOLODO
         {
             try
             {
-                //string name;
-                //  string message;
+               
                 StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
                 Thread readThread = new Thread(Read);
 
@@ -40,7 +39,7 @@ namespace iTOLODO
                 _serialPort.WriteTimeout = 500;
                 _serialPort.Open();
                 _continue = true;
-                _Saved = false; 
+                
                 Console.WriteLine("Application Connected to " + iTOLODO.Properties.Settings.Default.PortName.ToString() + " Port");
                 readThread.Start();
 
@@ -54,10 +53,12 @@ namespace iTOLODO
             }
           
         }
-
+        
+        /// <summary>
+        /// Read line from the port
+        /// </summary>
         public static void Read()
         {
-
             while (_continue)
             {
                 try
@@ -92,6 +93,11 @@ namespace iTOLODO
             }
         }
 
+        /// <summary>
+        /// Set Port Name
+        /// </summary>
+        /// <param name="defaultPortName"> String Port Name to set.</param>
+        /// <returns>String</returns>
         public static string SetPortName(string defaultPortName)
         {
             string portName;
@@ -112,6 +118,11 @@ namespace iTOLODO
             return portName;
         }
 
+        /// <summary>
+        /// Set Port Baud Rate
+        /// </summary>
+        /// <param name="defaultPortBaudRate">int Baud Rate of Port to set</param>
+        /// <returns>intiger BaudRate</returns>
         public static int SetPortBaudRate(int defaultPortBaudRate)
         {
             string baudRate;
@@ -127,6 +138,11 @@ namespace iTOLODO
             return int.Parse(baudRate);
         }
 
+        /// <summary>
+        /// Set Port Parity
+        /// </summary>
+        /// <param name="defaultPortParity">Enum Port Parity</param>
+        /// <returns>Enum of Parity Value </returns>
         public static Parity SetPortParity(Parity defaultPortParity)
         {
             string parity;
@@ -147,7 +163,12 @@ namespace iTOLODO
 
             return (Parity)Enum.Parse(typeof(Parity), parity);
         }
-
+        
+        /// <summary>
+        /// Set Port Databitd
+        /// </summary>
+        /// <param name="defaultPortDataBits">int Data Bits</param>
+        /// <returns></returns>
         public static int SetPortDataBits(int defaultPortDataBits)
         {
             string dataBits;
@@ -163,6 +184,11 @@ namespace iTOLODO
             return int.Parse(dataBits);
         }
 
+        /// <summary>
+        /// Set Stop Bit for port
+        /// </summary>
+        /// <param name="defaultPortStopBits">Enum StopBit value</param>
+        /// <returns>Enum Conved Stop Bit Value</returns>
         public static StopBits SetPortStopBits(StopBits defaultPortStopBits)
         {
             string stopBits;
@@ -184,6 +210,11 @@ namespace iTOLODO
             return (StopBits)Enum.Parse(typeof(StopBits), stopBits);
         }
 
+        /// <summary>
+        /// Set Handshake Method of Port
+        /// </summary>
+        /// <param name="defaultPortHandshake">Enum Handshake value</param>
+        /// <returns>Enum of type Handshake</returns>
         public static Handshake SetPortHandshake(Handshake defaultPortHandshake)
         {
             string handshake;
@@ -201,7 +232,6 @@ namespace iTOLODO
             {
                 handshake = defaultPortHandshake.ToString();
             }
-
             return (Handshake)Enum.Parse(typeof(Handshake), handshake);
         }
 
@@ -210,7 +240,6 @@ namespace iTOLODO
         /// </summary>
         public void _setDatabase()
         {
-
             try
             {
                 stringFromTOLEDO = _serialPort.ReadLine();
@@ -221,22 +250,26 @@ namespace iTOLODO
                 {
                     if (_tempMeasures.PCKRowID != _measures.PCKRowID)
                     {
-                        Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxWeight);
-                        Console.WriteLine("--------------------------------------------------------------------------------");
+                        //plit string to Measurement class format.
                         _measures = stringFromTOLEDO.SplitTOLEDOstring();
+
                         //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                        _Saved = mPackage.setPackageInfo(_measures);
+                        Boolean _savedFlag = mPackage.setPackageInfo(_measures);
+
+                        //Save Log to the Ecxel File.
+                        ExcelLogger Exel = new ExcelLogger(stringFromTOLEDO, _savedFlag);
+
+                        Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxWeight);
+                        Console.WriteLine("---------------------------------" + _savedFlag + "----------------------------------------");
                     }
                 }
                 catch (NullReferenceException)
                 {
-                    // Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxHeight);
-                    //Console.WriteLine("--------------------------------------------------------------------------------");
                     _measures = stringFromTOLEDO.SplitTOLEDOstring();
                     //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                    _Saved = mPackage.setPackageInfo(_measures);
+                    Boolean _savedFlag = mPackage.setPackageInfo(_measures);
+                    ExcelLogger Exel = new ExcelLogger(stringFromTOLEDO, _savedFlag);
                 }
-
             }
             catch (Exception)
             { }
