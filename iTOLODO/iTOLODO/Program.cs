@@ -23,7 +23,6 @@ namespace iTOLODO
         {
             try
             {
-                
                 StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
                 Thread readThread = new Thread(Read);
 
@@ -42,13 +41,13 @@ namespace iTOLODO
                 _serialPort.WriteTimeout = 500;
                 _serialPort.Open();
                 _continue = true;
-                
+
                 Console.WriteLine("Application Connected to " + iTOLODO.Properties.Settings.Default.PortName.ToString() + " Port");
                 readThread.Start();
 
                 readThread.Join();
                 _serialPort.Close();
-              
+
             }
             catch (Exception)
             {
@@ -56,7 +55,9 @@ namespace iTOLODO
             }
           
         }
-        
+
+       
+
         /// <summary>
         /// Read line from the port
         /// </summary>
@@ -75,10 +76,12 @@ namespace iTOLODO
                     catch (TimeoutException)
                     {
                         Thread.Sleep(200);
-                        /////Restatr appllication
+
+                        
+                        ///Restatr appllication
                         //System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                        //// Closes the current process
-                       // Environment.Exit(0);
+                        // Closes the current process
+                        //Environment.Exit(0);
                     }
                     catch (Exception)
                     { }
