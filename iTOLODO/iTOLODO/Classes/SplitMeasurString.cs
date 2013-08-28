@@ -18,10 +18,10 @@ namespace iTOLEDO.Classes
            Measures _measures = new Measures();
            try
            {
-               String TempString = TOLEDOstring.Replace("\r","");
-               String[] _charSplit = TempString.Split(new char[] { '=', ';' });
-               String[] _DimSplit = _charSplit[7].Split(new char[] { ',' });
-               _measures.PCKRowID = _charSplit[17];
+               String TempString = TOLEDOstring.Replace("\r","");//Last Chanractor Removed.
+               String[] _charSplit = TempString.Split(new char[] { '=', ';' });//Split string from multiple charactors.
+               String[] _DimSplit = _charSplit[7].Split(new char[] { ',' });//7th charactor is Dimentions again split in to Height, length, Width
+               _measures.PCKRowID = _charSplit[17];//17th Charactor is Packing number that is PCKROWID from Package Table.
                _measures.BoxLength = Convert.ToDouble(_DimSplit[0]);
                _measures.BoxWidth = Convert.ToDouble(_DimSplit[1]);
                _measures.BoxHeight = Convert.ToDouble(_DimSplit[2]);

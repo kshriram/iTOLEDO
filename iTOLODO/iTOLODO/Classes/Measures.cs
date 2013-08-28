@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace iTOLEDO.Classes
 {
+    /// <summary>
+    /// Author:Avinash
+    /// Version:1.0
+    /// Database compactable Format Measurement objects.
+    /// </summary>
     public class Measures
     {
         public String PCKRowID { get; set; }

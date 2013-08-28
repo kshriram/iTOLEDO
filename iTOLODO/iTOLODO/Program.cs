@@ -30,6 +30,7 @@ namespace iTOLODO
                 // Create a new SerialPort object with default settings.
                 _serialPort = new SerialPort();
 
+                //assign from the Setting File.
                 _serialPort.PortName = iTOLODO.Properties.Settings.Default.PortName.ToString();
                 _serialPort.BaudRate = (int)iTOLODO.Properties.Settings.Default.BaudRate;
                 _serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), iTOLODO.Properties.Settings.Default.Parity);
