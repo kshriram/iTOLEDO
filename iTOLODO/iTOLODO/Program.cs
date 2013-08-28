@@ -14,60 +14,81 @@ namespace iTOLODO
         static bool _continue;
         static bool _Saved;
         static SerialPort _serialPort;
-       static Measures _measures;
-       static String stringFromTOLEDO = "";
+        static Measures _measures;
+        static String stringFromTOLEDO = "";
 
         public static void Main()
         {
-            //string name;
-          //  string message;
-            StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
-            Thread readThread = new Thread(Read);
+            try
+            {
+                //string name;
+                //  string message;
+                StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
+                Thread readThread = new Thread(Read);
 
-            // Create a new SerialPort object with default settings.
-            _serialPort = new SerialPort();
+                // Create a new SerialPort object with default settings.
+                _serialPort = new SerialPort();
 
-            // Allow the user to set the appropriate properties.
-            //_serialPort.PortName = SetPortName(_serialPort.PortName);
-            //_serialPort.BaudRate = SetPortBaudRate(_serialPort.BaudRate);
-            //_serialPort.Parity = SetPortParity(_serialPort.Parity);
-            //_serialPort.DataBits = SetPortDataBits(_serialPort.DataBits);
-            //_serialPort.StopBits = SetPortStopBits(_serialPort.StopBits);
-            //_serialPort.Handshake = SetPortHandshake(_serialPort.Handshake);
+                _serialPort.PortName = iTOLODO.Properties.Settings.Default.PortName.ToString();
+                _serialPort.BaudRate = (int)iTOLODO.Properties.Settings.Default.BaudRate;
+                _serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), iTOLODO.Properties.Settings.Default.Parity);
+                _serialPort.DataBits = (int)iTOLODO.Properties.Settings.Default.DataBit;
+                _serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), iTOLODO.Properties.Settings.Default.StopBit);
+                _serialPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), iTOLODO.Properties.Settings.Default.Handshak);
 
-            _serialPort.PortName = SetPortName("COM15");
-            _serialPort.BaudRate = 9600;
-            _serialPort.Parity = Parity.None;
-            _serialPort.DataBits = 8;
-            _serialPort.StopBits = StopBits.One;
-            _serialPort.Handshake = Handshake.None;
-            
-            _serialPort.ReadTimeout = 500;
-            _serialPort.WriteTimeout = 500;
+                _serialPort.ReadTimeout = 500;
+                _serialPort.WriteTimeout = 500;
+                _serialPort.Open();
+                _continue = true;
+                _Saved = false; 
+                Console.WriteLine("Application Connected to " + iTOLODO.Properties.Settings.Default.PortName.ToString() + " Port");
+                readThread.Start();
 
-            _serialPort.Open();
-            _continue = true;
-            _Saved = false;
-            readThread.Start();
-
-            readThread.Join();
-            _serialPort.Close();
+                readThread.Join();
+                _serialPort.Close();
+              
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Opning COM port Error. Device is under use of another application. Or Chech the Application settings.");
+            }
+          
         }
 
         public static void Read()
         {
-            
+
             while (_continue)
             {
                 try
                 {
-                    string message = _serialPort.ReadLine();
+                    try
+                    {
+                        string message = _serialPort.ReadLine();
+                        Program _prg = new Program();
+                        _prg._setDatabase();
+                    }
+                    catch (TimeoutException)
+                    {
+                        Thread.Sleep(200);
+                        /////Restatr appllication
+                        //System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                        //// Closes the current process
+                       // Environment.Exit(0);
+                    }
+                    catch (Exception)
+                    { }
                    
-                    // _continue = false;
-                    Program _prg = new Program();
-                    _prg._setDatabase();
                 }
-                catch (TimeoutException) { }
+                catch (TimeoutException)
+                {
+                    if (_serialPort.IsOpen)
+                    {
+                        _serialPort.Close();
+                        _serialPort.Open();
+                    }
+                }
+
             }
         }
 
@@ -189,37 +210,37 @@ namespace iTOLODO
         /// </summary>
         public void _setDatabase()
         {
-           
+
             try
             {
-                    stringFromTOLEDO = _serialPort.ReadLine();
-                    //Split the string from TOLEDO and return measurement Objects.
-                    Measures _tempMeasures = new Measures();
-                    _tempMeasures = stringFromTOLEDO.SplitTOLEDOstring();
-                    try
+                stringFromTOLEDO = _serialPort.ReadLine();
+                //Split the string from TOLEDO and return measurement Objects.
+                Measures _tempMeasures = new Measures();
+                _tempMeasures = stringFromTOLEDO.SplitTOLEDOstring();
+                try
+                {
+                    if (_tempMeasures.PCKRowID != _measures.PCKRowID)
                     {
-                        if (_tempMeasures.PCKRowID != _measures.PCKRowID)
-                        {
-                            Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxHeight);
-                            Console.WriteLine("--------------------------------------------------------------------------------");
-                            _measures = stringFromTOLEDO.SplitTOLEDOstring();
-                            //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                            _Saved = mPackage.setPackageInfo(_measures);
-                        }
-                    }
-                    catch (NullReferenceException )
-                    {
-                        Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxHeight);
+                        Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxWeight);
                         Console.WriteLine("--------------------------------------------------------------------------------");
                         _measures = stringFromTOLEDO.SplitTOLEDOstring();
                         //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
                         _Saved = mPackage.setPackageInfo(_measures);
                     }
-                    
+                }
+                catch (NullReferenceException)
+                {
+                    // Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxHeight);
+                    //Console.WriteLine("--------------------------------------------------------------------------------");
+                    _measures = stringFromTOLEDO.SplitTOLEDOstring();
+                    //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
+                    _Saved = mPackage.setPackageInfo(_measures);
+                }
+
             }
             catch (Exception)
             { }
-          
+
         }
     }
 }
