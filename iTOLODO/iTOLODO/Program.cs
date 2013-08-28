@@ -2,8 +2,10 @@
 using iTOLODO.Classes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,7 +23,7 @@ namespace iTOLODO
         {
             try
             {
-               
+                
                 StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
                 Thread readThread = new Thread(Read);
 

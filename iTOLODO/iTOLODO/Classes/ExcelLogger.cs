@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -39,7 +40,7 @@ namespace iTOLODO.Classes
        {
            try
            {
-               string path = @"C:\iTOLEDO_Loggs.xls";
+               string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+"\\Resources\\iTOLEDO_Loggs.xls";
                oXL = new Microsoft.Office.Interop.Excel.Application();
                // oXL.Visible = true;
                oXL.DisplayAlerts = false;
