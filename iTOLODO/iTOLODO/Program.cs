@@ -51,7 +51,8 @@ namespace iTOLODO
             }
             catch (Exception)
             {
-                Console.WriteLine("Opning COM port Error. Device is under use of another application. Or Chech the Application settings.");
+                Console.WriteLine("Opning COM port Error. Device is under use of another application. Or Check the Application settings.");
+                Thread.Sleep(1000);
             }
           
         }
