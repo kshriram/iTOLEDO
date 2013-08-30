@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iTOLODO.Properties {
+namespace iTOLEDO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -38,9 +38,9 @@ namespace iTOLODO.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("9600")]
-        public long BaudRate {
+        public int BaudRate {
             get {
-                return ((long)(this["BaudRate"]));
+                return ((int)(this["BaudRate"]));
             }
             set {
                 this["BaudRate"] = value;

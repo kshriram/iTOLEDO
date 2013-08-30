@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("iTOLODO")]
+[assembly: AssemblyTitle("iTOLEDO")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("iTOLODO")]
+[assembly: AssemblyProduct("iTOLEDO")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8a2b2ad8-9ad2-41cf-929a-777ee4236089")]
+[assembly: Guid("dbfd28ce-fc2f-4520-9e98-1b6483bb3cbe")]
 
 // Version information for an assembly consists of the following four values:
 //

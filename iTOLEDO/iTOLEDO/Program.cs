@@ -2,27 +2,28 @@
 using iTOLODO.Classes;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.IO.Ports;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace iTOLODO
+namespace iTOLEDO
 {
     class Program
     {
+
         static bool _continue;
         static SerialPort _serialPort;
         static Measures _measures;
         static String stringFromTOLEDO = "";
 
+        //  [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "Full")]
         public static void Main()
         {
             try
             {
+
                 StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
                 Thread readThread = new Thread(Read);
 
@@ -30,19 +31,20 @@ namespace iTOLODO
                 _serialPort = new SerialPort();
 
                 //assign from the Setting File.
-                _serialPort.PortName = iTOLODO.Properties.Settings.Default.PortName.ToString();
-                _serialPort.BaudRate = (int)iTOLODO.Properties.Settings.Default.BaudRate;
-                _serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), iTOLODO.Properties.Settings.Default.Parity);
-                _serialPort.DataBits = (int)iTOLODO.Properties.Settings.Default.DataBit;
-                _serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), iTOLODO.Properties.Settings.Default.StopBit);
-                _serialPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), iTOLODO.Properties.Settings.Default.Handshak);
+                
+                _serialPort.PortName = iTOLEDO.Properties.Settings.Default.PortName.ToString();
+                _serialPort.BaudRate = (int)iTOLEDO.Properties.Settings.Default.BaudRate;
+                _serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), iTOLEDO.Properties.Settings.Default.Parity);
+                _serialPort.DataBits = (int)iTOLEDO.Properties.Settings.Default.DataBit;
+                _serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), iTOLEDO.Properties.Settings.Default.StopBit);
+                _serialPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), iTOLEDO.Properties.Settings.Default.Handshak);
 
                 _serialPort.ReadTimeout = 500;
                 _serialPort.WriteTimeout = 500;
                 _serialPort.Open();
                 _continue = true;
 
-                Console.WriteLine("Application Connected to " + iTOLODO.Properties.Settings.Default.PortName.ToString() + " Port");
+                Console.WriteLine("Application Connected to " + iTOLEDO.Properties.Settings.Default.PortName.ToString() + " Port");
                 readThread.Start();
 
                 readThread.Join();
@@ -52,12 +54,12 @@ namespace iTOLODO
             catch (Exception)
             {
                 Console.WriteLine("Opning COM port Error. Device is under use of another application. Or Check the Application settings.");
-                Thread.Sleep(1000);
+                Thread.Sleep(10000);
             }
-          
+
         }
 
-       
+
 
         /// <summary>
         /// Read line from the port
@@ -78,7 +80,7 @@ namespace iTOLODO
                     {
                         Thread.Sleep(200);
 
-                        
+
                         ///Restatr appllication
                         //System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
                         // Closes the current process
@@ -86,7 +88,7 @@ namespace iTOLODO
                     }
                     catch (Exception)
                     { }
-                   
+
                 }
                 catch (TimeoutException)
                 {
@@ -170,7 +172,7 @@ namespace iTOLODO
 
             return (Parity)Enum.Parse(typeof(Parity), parity);
         }
-        
+
         /// <summary>
         /// Set Port Databitd
         /// </summary>
@@ -276,6 +278,8 @@ namespace iTOLODO
                     //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
                     Boolean _savedFlag = mPackage.setPackageInfo(_measures);
                     ExcelLogger Exel = new ExcelLogger(stringFromTOLEDO, _savedFlag);
+                    Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxWeight);
+                    Console.WriteLine("---------------------------------" + _savedFlag + "----------------------------------------");
                 }
             }
             catch (Exception)

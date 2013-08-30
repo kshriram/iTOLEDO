@@ -19,21 +19,21 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_UserLogs_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.User), "Audit", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.Audit), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Package_Shipping", "Shipping", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(iTOLODO.Models.Shipping), "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.Package), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Package_Station", "Station", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(iTOLODO.Models.Station), "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.Package), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Package_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.User), "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.Package), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_PackageDetail_Package", "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.Package), "PackageDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.PackageDetail), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Tracking_Package", "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.Package), "Tracking", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.Tracking), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_User_Roles", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.Role), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.User), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Tracking_Shipping", "Shipping", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.Shipping), "Tracking", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.Tracking), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Station_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.User), "Station", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.Station), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_tblUserStation_tblStationMaster", "Station", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.Station), "UserStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.UserStation), true)]
-[assembly: EdmRelationshipAttribute("x3v6Model", "FK_UserStation_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLODO.Models.User), "UserStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLODO.Models.UserStation), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_UserLogs_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.User), "Audit", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.Audit), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Package_Shipping", "Shipping", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(iTOLEDO.Models.Shipping), "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.Package), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Package_Station", "Station", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(iTOLEDO.Models.Station), "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.Package), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Package_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.User), "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.Package), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_PackageDetail_Package", "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.Package), "PackageDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.PackageDetail), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Tracking_Package", "Package", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.Package), "Tracking", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.Tracking), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_User_Roles", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.Role), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.User), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Tracking_Shipping", "Shipping", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.Shipping), "Tracking", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.Tracking), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_Station_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.User), "Station", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.Station), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_tblUserStation_tblStationMaster", "Station", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.Station), "UserStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.UserStation), true)]
+[assembly: EdmRelationshipAttribute("x3v6Model", "FK_UserStation_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(iTOLEDO.Models.User), "UserStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(iTOLEDO.Models.UserStation), true)]
 
 #endregion
 
-namespace iTOLODO.Models
+namespace iTOLEDO.Models
 {
     #region Contexts
     
