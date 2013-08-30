@@ -72,6 +72,7 @@ namespace iTOLEDO
                 {
                     try
                     {
+                        Thread.Sleep(1000);
                         string message = _serialPort.ReadLine();
                         Program _prg = new Program();
                         _prg._setDatabase();

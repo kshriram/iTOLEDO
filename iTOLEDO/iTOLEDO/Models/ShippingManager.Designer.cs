@@ -406,7 +406,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -425,7 +425,7 @@ namespace iTOLEDO.Models
                 {
                     OnUserLogIDChanging(value);
                     ReportPropertyChanging("UserLogID");
-                    _UserLogID = StructuralObject.SetValidValue(value, "UserLogID");
+                    _UserLogID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("UserLogID");
                     OnUserLogIDChanged();
                 }
@@ -450,7 +450,7 @@ namespace iTOLEDO.Models
             {
                 OnUserIDChanging(value);
                 ReportPropertyChanging("UserID");
-                _UserID = StructuralObject.SetValidValue(value, "UserID");
+                _UserID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UserID");
                 OnUserIDChanged();
             }
@@ -474,7 +474,7 @@ namespace iTOLEDO.Models
             {
                 OnActionTypeChanging(value);
                 ReportPropertyChanging("ActionType");
-                _ActionType = StructuralObject.SetValidValue(value, true, "ActionType");
+                _ActionType = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ActionType");
                 OnActionTypeChanged();
             }
@@ -498,7 +498,7 @@ namespace iTOLEDO.Models
             {
                 OnActionTimeChanging(value);
                 ReportPropertyChanging("ActionTime");
-                _ActionTime = StructuralObject.SetValidValue(value, "ActionTime");
+                _ActionTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ActionTime");
                 OnActionTimeChanged();
             }
@@ -522,7 +522,7 @@ namespace iTOLEDO.Models
             {
                 OnActionValueChanging(value);
                 ReportPropertyChanging("ActionValue");
-                _ActionValue = StructuralObject.SetValidValue(value, true, "ActionValue");
+                _ActionValue = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ActionValue");
                 OnActionValueChanged();
             }
@@ -533,6 +533,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -600,7 +601,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -619,7 +620,7 @@ namespace iTOLEDO.Models
                 {
                     OnErrorLogIDChanging(value);
                     ReportPropertyChanging("ErrorLogID");
-                    _ErrorLogID = StructuralObject.SetValidValue(value, "ErrorLogID");
+                    _ErrorLogID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("ErrorLogID");
                     OnErrorLogIDChanged();
                 }
@@ -644,7 +645,7 @@ namespace iTOLEDO.Models
             {
                 OnUserIDChanging(value);
                 ReportPropertyChanging("UserID");
-                _UserID = StructuralObject.SetValidValue(value, "UserID");
+                _UserID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UserID");
                 OnUserIDChanged();
             }
@@ -668,7 +669,7 @@ namespace iTOLEDO.Models
             {
                 OnErrorLocationChanging(value);
                 ReportPropertyChanging("ErrorLocation");
-                _ErrorLocation = StructuralObject.SetValidValue(value, true, "ErrorLocation");
+                _ErrorLocation = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ErrorLocation");
                 OnErrorLocationChanged();
             }
@@ -692,7 +693,7 @@ namespace iTOLEDO.Models
             {
                 OnErrorDescChanging(value);
                 ReportPropertyChanging("ErrorDesc");
-                _ErrorDesc = StructuralObject.SetValidValue(value, true, "ErrorDesc");
+                _ErrorDesc = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ErrorDesc");
                 OnErrorDescChanged();
             }
@@ -716,7 +717,7 @@ namespace iTOLEDO.Models
             {
                 OnErrorTimeChanging(value);
                 ReportPropertyChanging("ErrorTime");
-                _ErrorTime = StructuralObject.SetValidValue(value, "ErrorTime");
+                _ErrorTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ErrorTime");
                 OnErrorTimeChanged();
             }
@@ -727,6 +728,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
     }
     
     /// <summary>
@@ -758,7 +760,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -777,7 +779,7 @@ namespace iTOLEDO.Models
                 {
                     OnPackingIdChanging(value);
                     ReportPropertyChanging("PackingId");
-                    _PackingId = StructuralObject.SetValidValue(value, "PackingId");
+                    _PackingId = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("PackingId");
                     OnPackingIdChanged();
                 }
@@ -802,7 +804,7 @@ namespace iTOLEDO.Models
             {
                 OnUserIdChanging(value);
                 ReportPropertyChanging("UserId");
-                _UserId = StructuralObject.SetValidValue(value, "UserId");
+                _UserId = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UserId");
                 OnUserIdChanged();
             }
@@ -826,7 +828,7 @@ namespace iTOLEDO.Models
             {
                 OnStationIDChanging(value);
                 ReportPropertyChanging("StationID");
-                _StationID = StructuralObject.SetValidValue(value, "StationID");
+                _StationID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("StationID");
                 OnStationIDChanged();
             }
@@ -850,7 +852,7 @@ namespace iTOLEDO.Models
             {
                 OnShippingIDChanging(value);
                 ReportPropertyChanging("ShippingID");
-                _ShippingID = StructuralObject.SetValidValue(value, "ShippingID");
+                _ShippingID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ShippingID");
                 OnShippingIDChanged();
             }
@@ -874,7 +876,7 @@ namespace iTOLEDO.Models
             {
                 OnShippingNumChanging(value);
                 ReportPropertyChanging("ShippingNum");
-                _ShippingNum = StructuralObject.SetValidValue(value, false, "ShippingNum");
+                _ShippingNum = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("ShippingNum");
                 OnShippingNumChanged();
             }
@@ -898,7 +900,7 @@ namespace iTOLEDO.Models
             {
                 OnBoxTypeChanging(value);
                 ReportPropertyChanging("BoxType");
-                _BoxType = StructuralObject.SetValidValue(value, true, "BoxType");
+                _BoxType = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("BoxType");
                 OnBoxTypeChanged();
             }
@@ -922,7 +924,7 @@ namespace iTOLEDO.Models
             {
                 OnBoxWeightChanging(value);
                 ReportPropertyChanging("BoxWeight");
-                _BoxWeight = StructuralObject.SetValidValue(value, "BoxWeight");
+                _BoxWeight = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("BoxWeight");
                 OnBoxWeightChanged();
             }
@@ -946,7 +948,7 @@ namespace iTOLEDO.Models
             {
                 OnBoxLengthChanging(value);
                 ReportPropertyChanging("BoxLength");
-                _BoxLength = StructuralObject.SetValidValue(value, "BoxLength");
+                _BoxLength = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("BoxLength");
                 OnBoxLengthChanged();
             }
@@ -970,7 +972,7 @@ namespace iTOLEDO.Models
             {
                 OnBoxHeightChanging(value);
                 ReportPropertyChanging("BoxHeight");
-                _BoxHeight = StructuralObject.SetValidValue(value, "BoxHeight");
+                _BoxHeight = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("BoxHeight");
                 OnBoxHeightChanged();
             }
@@ -994,7 +996,7 @@ namespace iTOLEDO.Models
             {
                 OnBoxWidthChanging(value);
                 ReportPropertyChanging("BoxWidth");
-                _BoxWidth = StructuralObject.SetValidValue(value, "BoxWidth");
+                _BoxWidth = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("BoxWidth");
                 OnBoxWidthChanged();
             }
@@ -1018,7 +1020,7 @@ namespace iTOLEDO.Models
             {
                 OnBoxDimensionChanging(value);
                 ReportPropertyChanging("BoxDimension");
-                _BoxDimension = StructuralObject.SetValidValue(value, true, "BoxDimension");
+                _BoxDimension = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("BoxDimension");
                 OnBoxDimensionChanged();
             }
@@ -1042,7 +1044,7 @@ namespace iTOLEDO.Models
             {
                 OnStartTimeChanging(value);
                 ReportPropertyChanging("StartTime");
-                _StartTime = StructuralObject.SetValidValue(value, "StartTime");
+                _StartTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("StartTime");
                 OnStartTimeChanged();
             }
@@ -1066,7 +1068,7 @@ namespace iTOLEDO.Models
             {
                 OnEndTimeChanging(value);
                 ReportPropertyChanging("EndTime");
-                _EndTime = StructuralObject.SetValidValue(value, "EndTime");
+                _EndTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("EndTime");
                 OnEndTimeChanged();
             }
@@ -1090,7 +1092,7 @@ namespace iTOLEDO.Models
             {
                 OnShipmentLocationChanging(value);
                 ReportPropertyChanging("ShipmentLocation");
-                _ShipmentLocation = StructuralObject.SetValidValue(value, true, "ShipmentLocation");
+                _ShipmentLocation = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ShipmentLocation");
                 OnShipmentLocationChanged();
             }
@@ -1114,7 +1116,7 @@ namespace iTOLEDO.Models
             {
                 OnPackingStatusChanging(value);
                 ReportPropertyChanging("PackingStatus");
-                _PackingStatus = StructuralObject.SetValidValue(value, "PackingStatus");
+                _PackingStatus = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("PackingStatus");
                 OnPackingStatusChanged();
             }
@@ -1138,7 +1140,7 @@ namespace iTOLEDO.Models
             {
                 OnManagerOverrideChanging(value);
                 ReportPropertyChanging("ManagerOverride");
-                _ManagerOverride = StructuralObject.SetValidValue(value, "ManagerOverride");
+                _ManagerOverride = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ManagerOverride");
                 OnManagerOverrideChanged();
             }
@@ -1162,7 +1164,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -1186,7 +1188,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -1210,7 +1212,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -1234,7 +1236,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -1258,7 +1260,7 @@ namespace iTOLEDO.Models
             {
                 OnROWIDChanging(value);
                 ReportPropertyChanging("ROWID");
-                _ROWID = StructuralObject.SetValidValue(value, "ROWID");
+                _ROWID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ROWID");
                 OnROWIDChanged();
             }
@@ -1282,7 +1284,7 @@ namespace iTOLEDO.Models
             {
                 OnPCKROWIDChanging(value);
                 ReportPropertyChanging("PCKROWID");
-                _PCKROWID = StructuralObject.SetValidValue(value, true, "PCKROWID");
+                _PCKROWID = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("PCKROWID");
                 OnPCKROWIDChanged();
             }
@@ -1293,6 +1295,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -1482,7 +1485,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1501,7 +1504,7 @@ namespace iTOLEDO.Models
                 {
                     OnPackingDetailIDChanging(value);
                     ReportPropertyChanging("PackingDetailID");
-                    _PackingDetailID = StructuralObject.SetValidValue(value, "PackingDetailID");
+                    _PackingDetailID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("PackingDetailID");
                     OnPackingDetailIDChanged();
                 }
@@ -1526,7 +1529,7 @@ namespace iTOLEDO.Models
             {
                 OnPackingIdChanging(value);
                 ReportPropertyChanging("PackingId");
-                _PackingId = StructuralObject.SetValidValue(value, "PackingId");
+                _PackingId = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("PackingId");
                 OnPackingIdChanged();
             }
@@ -1550,7 +1553,7 @@ namespace iTOLEDO.Models
             {
                 OnSKUNumberChanging(value);
                 ReportPropertyChanging("SKUNumber");
-                _SKUNumber = StructuralObject.SetValidValue(value, true, "SKUNumber");
+                _SKUNumber = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("SKUNumber");
                 OnSKUNumberChanged();
             }
@@ -1574,7 +1577,7 @@ namespace iTOLEDO.Models
             {
                 OnSKUQuantityChanging(value);
                 ReportPropertyChanging("SKUQuantity");
-                _SKUQuantity = StructuralObject.SetValidValue(value, "SKUQuantity");
+                _SKUQuantity = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("SKUQuantity");
                 OnSKUQuantityChanged();
             }
@@ -1598,7 +1601,7 @@ namespace iTOLEDO.Models
             {
                 OnSKUScanDateTimeChanging(value);
                 ReportPropertyChanging("SKUScanDateTime");
-                _SKUScanDateTime = StructuralObject.SetValidValue(value, "SKUScanDateTime");
+                _SKUScanDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("SKUScanDateTime");
                 OnSKUScanDateTimeChanged();
             }
@@ -1622,7 +1625,7 @@ namespace iTOLEDO.Models
             {
                 OnBoxQuantityChanging(value);
                 ReportPropertyChanging("BoxQuantity");
-                _BoxQuantity = StructuralObject.SetValidValue(value, "BoxQuantity");
+                _BoxQuantity = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("BoxQuantity");
                 OnBoxQuantityChanged();
             }
@@ -1646,7 +1649,7 @@ namespace iTOLEDO.Models
             {
                 OnShipmentLocationChanging(value);
                 ReportPropertyChanging("ShipmentLocation");
-                _ShipmentLocation = StructuralObject.SetValidValue(value, true, "ShipmentLocation");
+                _ShipmentLocation = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ShipmentLocation");
                 OnShipmentLocationChanged();
             }
@@ -1670,7 +1673,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -1694,7 +1697,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -1718,7 +1721,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -1742,7 +1745,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -1753,6 +1756,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -1820,7 +1824,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1839,7 +1843,7 @@ namespace iTOLEDO.Models
                 {
                     OnRoleIdChanging(value);
                     ReportPropertyChanging("RoleId");
-                    _RoleId = StructuralObject.SetValidValue(value, "RoleId");
+                    _RoleId = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("RoleId");
                     OnRoleIdChanged();
                 }
@@ -1864,7 +1868,7 @@ namespace iTOLEDO.Models
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true, "Name");
+                _Name = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -1888,7 +1892,7 @@ namespace iTOLEDO.Models
             {
                 OnActionChanging(value);
                 ReportPropertyChanging("Action");
-                _Action = StructuralObject.SetValidValue(value, true, "Action");
+                _Action = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Action");
                 OnActionChanged();
             }
@@ -1912,7 +1916,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -1936,7 +1940,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -1960,7 +1964,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -1984,7 +1988,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -1995,6 +1999,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -2050,7 +2055,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2069,7 +2074,7 @@ namespace iTOLEDO.Models
                 {
                     OnShippingIDChanging(value);
                     ReportPropertyChanging("ShippingID");
-                    _ShippingID = StructuralObject.SetValidValue(value, "ShippingID");
+                    _ShippingID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("ShippingID");
                     OnShippingIDChanged();
                 }
@@ -2094,7 +2099,7 @@ namespace iTOLEDO.Models
             {
                 OnShippingNumChanging(value);
                 ReportPropertyChanging("ShippingNum");
-                _ShippingNum = StructuralObject.SetValidValue(value, false, "ShippingNum");
+                _ShippingNum = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("ShippingNum");
                 OnShippingNumChanged();
             }
@@ -2118,7 +2123,7 @@ namespace iTOLEDO.Models
             {
                 OnShippingStartTimeChanging(value);
                 ReportPropertyChanging("ShippingStartTime");
-                _ShippingStartTime = StructuralObject.SetValidValue(value, "ShippingStartTime");
+                _ShippingStartTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ShippingStartTime");
                 OnShippingStartTimeChanged();
             }
@@ -2142,7 +2147,7 @@ namespace iTOLEDO.Models
             {
                 OnShippingEndTimeChanging(value);
                 ReportPropertyChanging("ShippingEndTime");
-                _ShippingEndTime = StructuralObject.SetValidValue(value, "ShippingEndTime");
+                _ShippingEndTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ShippingEndTime");
                 OnShippingEndTimeChanged();
             }
@@ -2166,7 +2171,7 @@ namespace iTOLEDO.Models
             {
                 OnDeliveryProviderChanging(value);
                 ReportPropertyChanging("DeliveryProvider");
-                _DeliveryProvider = StructuralObject.SetValidValue(value, true, "DeliveryProvider");
+                _DeliveryProvider = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("DeliveryProvider");
                 OnDeliveryProviderChanged();
             }
@@ -2190,7 +2195,7 @@ namespace iTOLEDO.Models
             {
                 OnDeliveryModeChanging(value);
                 ReportPropertyChanging("DeliveryMode");
-                _DeliveryMode = StructuralObject.SetValidValue(value, true, "DeliveryMode");
+                _DeliveryMode = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("DeliveryMode");
                 OnDeliveryModeChanged();
             }
@@ -2214,7 +2219,7 @@ namespace iTOLEDO.Models
             {
                 OnFromAddressLine1Changing(value);
                 ReportPropertyChanging("FromAddressLine1");
-                _FromAddressLine1 = StructuralObject.SetValidValue(value, true, "FromAddressLine1");
+                _FromAddressLine1 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FromAddressLine1");
                 OnFromAddressLine1Changed();
             }
@@ -2238,7 +2243,7 @@ namespace iTOLEDO.Models
             {
                 OnFromAddressLine2Changing(value);
                 ReportPropertyChanging("FromAddressLine2");
-                _FromAddressLine2 = StructuralObject.SetValidValue(value, true, "FromAddressLine2");
+                _FromAddressLine2 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FromAddressLine2");
                 OnFromAddressLine2Changed();
             }
@@ -2262,7 +2267,7 @@ namespace iTOLEDO.Models
             {
                 OnFromAddressLine3Changing(value);
                 ReportPropertyChanging("FromAddressLine3");
-                _FromAddressLine3 = StructuralObject.SetValidValue(value, true, "FromAddressLine3");
+                _FromAddressLine3 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FromAddressLine3");
                 OnFromAddressLine3Changed();
             }
@@ -2286,7 +2291,7 @@ namespace iTOLEDO.Models
             {
                 OnFromAddressCityChanging(value);
                 ReportPropertyChanging("FromAddressCity");
-                _FromAddressCity = StructuralObject.SetValidValue(value, true, "FromAddressCity");
+                _FromAddressCity = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FromAddressCity");
                 OnFromAddressCityChanged();
             }
@@ -2310,7 +2315,7 @@ namespace iTOLEDO.Models
             {
                 OnFromAddressStateChanging(value);
                 ReportPropertyChanging("FromAddressState");
-                _FromAddressState = StructuralObject.SetValidValue(value, true, "FromAddressState");
+                _FromAddressState = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FromAddressState");
                 OnFromAddressStateChanged();
             }
@@ -2334,7 +2339,7 @@ namespace iTOLEDO.Models
             {
                 OnFromAddressCountryChanging(value);
                 ReportPropertyChanging("FromAddressCountry");
-                _FromAddressCountry = StructuralObject.SetValidValue(value, true, "FromAddressCountry");
+                _FromAddressCountry = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FromAddressCountry");
                 OnFromAddressCountryChanged();
             }
@@ -2358,7 +2363,7 @@ namespace iTOLEDO.Models
             {
                 OnFromAddressZipCodeChanging(value);
                 ReportPropertyChanging("FromAddressZipCode");
-                _FromAddressZipCode = StructuralObject.SetValidValue(value, true, "FromAddressZipCode");
+                _FromAddressZipCode = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FromAddressZipCode");
                 OnFromAddressZipCodeChanged();
             }
@@ -2382,7 +2387,7 @@ namespace iTOLEDO.Models
             {
                 OnToAddressLine1Changing(value);
                 ReportPropertyChanging("ToAddressLine1");
-                _ToAddressLine1 = StructuralObject.SetValidValue(value, true, "ToAddressLine1");
+                _ToAddressLine1 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ToAddressLine1");
                 OnToAddressLine1Changed();
             }
@@ -2406,7 +2411,7 @@ namespace iTOLEDO.Models
             {
                 OnToAddressLine2Changing(value);
                 ReportPropertyChanging("ToAddressLine2");
-                _ToAddressLine2 = StructuralObject.SetValidValue(value, true, "ToAddressLine2");
+                _ToAddressLine2 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ToAddressLine2");
                 OnToAddressLine2Changed();
             }
@@ -2430,7 +2435,7 @@ namespace iTOLEDO.Models
             {
                 OnToAddressLine3Changing(value);
                 ReportPropertyChanging("ToAddressLine3");
-                _ToAddressLine3 = StructuralObject.SetValidValue(value, true, "ToAddressLine3");
+                _ToAddressLine3 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ToAddressLine3");
                 OnToAddressLine3Changed();
             }
@@ -2454,7 +2459,7 @@ namespace iTOLEDO.Models
             {
                 OnToAddressCityChanging(value);
                 ReportPropertyChanging("ToAddressCity");
-                _ToAddressCity = StructuralObject.SetValidValue(value, true, "ToAddressCity");
+                _ToAddressCity = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ToAddressCity");
                 OnToAddressCityChanged();
             }
@@ -2478,7 +2483,7 @@ namespace iTOLEDO.Models
             {
                 OnToAddressStateChanging(value);
                 ReportPropertyChanging("ToAddressState");
-                _ToAddressState = StructuralObject.SetValidValue(value, true, "ToAddressState");
+                _ToAddressState = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ToAddressState");
                 OnToAddressStateChanged();
             }
@@ -2502,7 +2507,7 @@ namespace iTOLEDO.Models
             {
                 OnToAddressCountryChanging(value);
                 ReportPropertyChanging("ToAddressCountry");
-                _ToAddressCountry = StructuralObject.SetValidValue(value, true, "ToAddressCountry");
+                _ToAddressCountry = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ToAddressCountry");
                 OnToAddressCountryChanged();
             }
@@ -2526,7 +2531,7 @@ namespace iTOLEDO.Models
             {
                 OnToAddressZipCodeChanging(value);
                 ReportPropertyChanging("ToAddressZipCode");
-                _ToAddressZipCode = StructuralObject.SetValidValue(value, true, "ToAddressZipCode");
+                _ToAddressZipCode = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ToAddressZipCode");
                 OnToAddressZipCodeChanged();
             }
@@ -2550,7 +2555,7 @@ namespace iTOLEDO.Models
             {
                 OnShipmentStatusChanging(value);
                 ReportPropertyChanging("ShipmentStatus");
-                _ShipmentStatus = StructuralObject.SetValidValue(value, true, "ShipmentStatus");
+                _ShipmentStatus = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ShipmentStatus");
                 OnShipmentStatusChanged();
             }
@@ -2574,7 +2579,7 @@ namespace iTOLEDO.Models
             {
                 OnOrderIDChanging(value);
                 ReportPropertyChanging("OrderID");
-                _OrderID = StructuralObject.SetValidValue(value, true, "OrderID");
+                _OrderID = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("OrderID");
                 OnOrderIDChanged();
             }
@@ -2598,7 +2603,7 @@ namespace iTOLEDO.Models
             {
                 OnCustomerPOChanging(value);
                 ReportPropertyChanging("CustomerPO");
-                _CustomerPO = StructuralObject.SetValidValue(value, true, "CustomerPO");
+                _CustomerPO = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("CustomerPO");
                 OnCustomerPOChanged();
             }
@@ -2622,7 +2627,7 @@ namespace iTOLEDO.Models
             {
                 OnShipToAddressChanging(value);
                 ReportPropertyChanging("ShipToAddress");
-                _ShipToAddress = StructuralObject.SetValidValue(value, true, "ShipToAddress");
+                _ShipToAddress = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ShipToAddress");
                 OnShipToAddressChanged();
             }
@@ -2646,7 +2651,7 @@ namespace iTOLEDO.Models
             {
                 OnOurSupplierNoChanging(value);
                 ReportPropertyChanging("OurSupplierNo");
-                _OurSupplierNo = StructuralObject.SetValidValue(value, true, "OurSupplierNo");
+                _OurSupplierNo = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("OurSupplierNo");
                 OnOurSupplierNoChanged();
             }
@@ -2670,7 +2675,7 @@ namespace iTOLEDO.Models
             {
                 OnCustomerName1Changing(value);
                 ReportPropertyChanging("CustomerName1");
-                _CustomerName1 = StructuralObject.SetValidValue(value, true, "CustomerName1");
+                _CustomerName1 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("CustomerName1");
                 OnCustomerName1Changed();
             }
@@ -2694,7 +2699,7 @@ namespace iTOLEDO.Models
             {
                 OnCustomerName2Changing(value);
                 ReportPropertyChanging("CustomerName2");
-                _CustomerName2 = StructuralObject.SetValidValue(value, true, "CustomerName2");
+                _CustomerName2 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("CustomerName2");
                 OnCustomerName2Changed();
             }
@@ -2718,7 +2723,7 @@ namespace iTOLEDO.Models
             {
                 OnWebAddressChanging(value);
                 ReportPropertyChanging("WebAddress");
-                _WebAddress = StructuralObject.SetValidValue(value, true, "WebAddress");
+                _WebAddress = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("WebAddress");
                 OnWebAddressChanged();
             }
@@ -2742,7 +2747,7 @@ namespace iTOLEDO.Models
             {
                 OnFreightTermsChanging(value);
                 ReportPropertyChanging("FreightTerms");
-                _FreightTerms = StructuralObject.SetValidValue(value, true, "FreightTerms");
+                _FreightTerms = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("FreightTerms");
                 OnFreightTermsChanged();
             }
@@ -2766,7 +2771,7 @@ namespace iTOLEDO.Models
             {
                 OnCarrierChanging(value);
                 ReportPropertyChanging("Carrier");
-                _Carrier = StructuralObject.SetValidValue(value, true, "Carrier");
+                _Carrier = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Carrier");
                 OnCarrierChanged();
             }
@@ -2790,7 +2795,7 @@ namespace iTOLEDO.Models
             {
                 OnDeliveryContactChanging(value);
                 ReportPropertyChanging("DeliveryContact");
-                _DeliveryContact = StructuralObject.SetValidValue(value, true, "DeliveryContact");
+                _DeliveryContact = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("DeliveryContact");
                 OnDeliveryContactChanged();
             }
@@ -2814,7 +2819,7 @@ namespace iTOLEDO.Models
             {
                 OnIndexcodeChanging(value);
                 ReportPropertyChanging("Indexcode");
-                _Indexcode = StructuralObject.SetValidValue(value, "Indexcode");
+                _Indexcode = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Indexcode");
                 OnIndexcodeChanged();
             }
@@ -2838,7 +2843,7 @@ namespace iTOLEDO.Models
             {
                 OnContactChanging(value);
                 ReportPropertyChanging("Contact");
-                _Contact = StructuralObject.SetValidValue(value, true, "Contact");
+                _Contact = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Contact");
                 OnContactChanged();
             }
@@ -2862,7 +2867,7 @@ namespace iTOLEDO.Models
             {
                 OnPaymentTermsChanging(value);
                 ReportPropertyChanging("PaymentTerms");
-                _PaymentTerms = StructuralObject.SetValidValue(value, true, "PaymentTerms");
+                _PaymentTerms = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("PaymentTerms");
                 OnPaymentTermsChanged();
             }
@@ -2886,7 +2891,7 @@ namespace iTOLEDO.Models
             {
                 OnTotalPackagesChanging(value);
                 ReportPropertyChanging("TotalPackages");
-                _TotalPackages = StructuralObject.SetValidValue(value, "TotalPackages");
+                _TotalPackages = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("TotalPackages");
                 OnTotalPackagesChanged();
             }
@@ -2910,7 +2915,7 @@ namespace iTOLEDO.Models
             {
                 OnFaxChanging(value);
                 ReportPropertyChanging("Fax");
-                _Fax = StructuralObject.SetValidValue(value, true, "Fax");
+                _Fax = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Fax");
                 OnFaxChanged();
             }
@@ -2934,7 +2939,7 @@ namespace iTOLEDO.Models
             {
                 OnVendorNameChanging(value);
                 ReportPropertyChanging("VendorName");
-                _VendorName = StructuralObject.SetValidValue(value, true, "VendorName");
+                _VendorName = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("VendorName");
                 OnVendorNameChanged();
             }
@@ -2958,7 +2963,7 @@ namespace iTOLEDO.Models
             {
                 OnMDL_0Changing(value);
                 ReportPropertyChanging("MDL_0");
-                _MDL_0 = StructuralObject.SetValidValue(value, true, "MDL_0");
+                _MDL_0 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("MDL_0");
                 OnMDL_0Changed();
             }
@@ -2982,7 +2987,7 @@ namespace iTOLEDO.Models
             {
                 OnXB_RESFLG_0Changing(value);
                 ReportPropertyChanging("XB_RESFLG_0");
-                _XB_RESFLG_0 = StructuralObject.SetValidValue(value, "XB_RESFLG_0");
+                _XB_RESFLG_0 = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("XB_RESFLG_0");
                 OnXB_RESFLG_0Changed();
             }
@@ -3006,7 +3011,7 @@ namespace iTOLEDO.Models
             {
                 OnCODCHG_0Changing(value);
                 ReportPropertyChanging("CODCHG_0");
-                _CODCHG_0 = StructuralObject.SetValidValue(value, true, "CODCHG_0");
+                _CODCHG_0 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("CODCHG_0");
                 OnCODCHG_0Changed();
             }
@@ -3030,7 +3035,7 @@ namespace iTOLEDO.Models
             {
                 OnADDCODFRT_0Changing(value);
                 ReportPropertyChanging("ADDCODFRT_0");
-                _ADDCODFRT_0 = StructuralObject.SetValidValue(value, "ADDCODFRT_0");
+                _ADDCODFRT_0 = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ADDCODFRT_0");
                 OnADDCODFRT_0Changed();
             }
@@ -3054,7 +3059,7 @@ namespace iTOLEDO.Models
             {
                 OnBILLOPT_0Changing(value);
                 ReportPropertyChanging("BILLOPT_0");
-                _BILLOPT_0 = StructuralObject.SetValidValue(value, true, "BILLOPT_0");
+                _BILLOPT_0 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("BILLOPT_0");
                 OnBILLOPT_0Changed();
             }
@@ -3078,7 +3083,7 @@ namespace iTOLEDO.Models
             {
                 OnHDLCHG_0Changing(value);
                 ReportPropertyChanging("HDLCHG_0");
-                _HDLCHG_0 = StructuralObject.SetValidValue(value, true, "HDLCHG_0");
+                _HDLCHG_0 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("HDLCHG_0");
                 OnHDLCHG_0Changed();
             }
@@ -3102,7 +3107,7 @@ namespace iTOLEDO.Models
             {
                 OnDOWNFLG_0Changing(value);
                 ReportPropertyChanging("DOWNFLG_0");
-                _DOWNFLG_0 = StructuralObject.SetValidValue(value, "DOWNFLG_0");
+                _DOWNFLG_0 = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("DOWNFLG_0");
                 OnDOWNFLG_0Changed();
             }
@@ -3126,7 +3131,7 @@ namespace iTOLEDO.Models
             {
                 OnBACCT_0Changing(value);
                 ReportPropertyChanging("BACCT_0");
-                _BACCT_0 = StructuralObject.SetValidValue(value, true, "BACCT_0");
+                _BACCT_0 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("BACCT_0");
                 OnBACCT_0Changed();
             }
@@ -3150,7 +3155,7 @@ namespace iTOLEDO.Models
             {
                 OnTPBILL_0Changing(value);
                 ReportPropertyChanging("TPBILL_0");
-                _TPBILL_0 = StructuralObject.SetValidValue(value, "TPBILL_0");
+                _TPBILL_0 = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("TPBILL_0");
                 OnTPBILL_0Changed();
             }
@@ -3174,7 +3179,7 @@ namespace iTOLEDO.Models
             {
                 OnCUSTBILL_0Changing(value);
                 ReportPropertyChanging("CUSTBILL_0");
-                _CUSTBILL_0 = StructuralObject.SetValidValue(value, "CUSTBILL_0");
+                _CUSTBILL_0 = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CUSTBILL_0");
                 OnCUSTBILL_0Changed();
             }
@@ -3198,7 +3203,7 @@ namespace iTOLEDO.Models
             {
                 OnCNTFULNAM_0Changing(value);
                 ReportPropertyChanging("CNTFULNAM_0");
-                _CNTFULNAM_0 = StructuralObject.SetValidValue(value, true, "CNTFULNAM_0");
+                _CNTFULNAM_0 = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("CNTFULNAM_0");
                 OnCNTFULNAM_0Changed();
             }
@@ -3222,7 +3227,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -3246,7 +3251,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -3270,7 +3275,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -3294,7 +3299,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -3318,7 +3323,7 @@ namespace iTOLEDO.Models
             {
                 OnROWIDChanging(value);
                 ReportPropertyChanging("ROWID");
-                _ROWID = StructuralObject.SetValidValue(value, "ROWID");
+                _ROWID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ROWID");
                 OnROWIDChanged();
             }
@@ -3342,7 +3347,7 @@ namespace iTOLEDO.Models
             {
                 OnSHIPPINGROWIDChanging(value);
                 ReportPropertyChanging("SHIPPINGROWID");
-                _SHIPPINGROWID = StructuralObject.SetValidValue(value, true, "SHIPPINGROWID");
+                _SHIPPINGROWID = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("SHIPPINGROWID");
                 OnSHIPPINGROWIDChanged();
             }
@@ -3353,6 +3358,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -3430,7 +3436,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3449,7 +3455,7 @@ namespace iTOLEDO.Models
                 {
                     OnRowIDChanging(value);
                     ReportPropertyChanging("RowID");
-                    _RowID = StructuralObject.SetValidValue(value, "RowID");
+                    _RowID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("RowID");
                     OnRowIDChanged();
                 }
@@ -3474,7 +3480,7 @@ namespace iTOLEDO.Models
             {
                 OnSKUChanging(value);
                 ReportPropertyChanging("SKU");
-                _SKU = StructuralObject.SetValidValue(value, false, "SKU");
+                _SKU = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("SKU");
                 OnSKUChanged();
             }
@@ -3498,7 +3504,7 @@ namespace iTOLEDO.Models
             {
                 OnSKUrlChanging(value);
                 ReportPropertyChanging("SKUrl");
-                _SKUrl = StructuralObject.SetValidValue(value, false, "SKUrl");
+                _SKUrl = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("SKUrl");
                 OnSKUrlChanged();
             }
@@ -3509,6 +3515,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
     }
     
     /// <summary>
@@ -3544,7 +3551,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3563,7 +3570,7 @@ namespace iTOLEDO.Models
                 {
                     OnStationIDChanging(value);
                     ReportPropertyChanging("StationID");
-                    _StationID = StructuralObject.SetValidValue(value, "StationID");
+                    _StationID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("StationID");
                     OnStationIDChanged();
                 }
@@ -3588,7 +3595,7 @@ namespace iTOLEDO.Models
             {
                 OnRequestedUserIDChanging(value);
                 ReportPropertyChanging("RequestedUserID");
-                _RequestedUserID = StructuralObject.SetValidValue(value, "RequestedUserID");
+                _RequestedUserID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("RequestedUserID");
                 OnRequestedUserIDChanged();
             }
@@ -3612,7 +3619,7 @@ namespace iTOLEDO.Models
             {
                 OnStationNameChanging(value);
                 ReportPropertyChanging("StationName");
-                _StationName = StructuralObject.SetValidValue(value, false, "StationName");
+                _StationName = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("StationName");
                 OnStationNameChanged();
             }
@@ -3636,7 +3643,7 @@ namespace iTOLEDO.Models
             {
                 OnDeviceNumberChanging(value);
                 ReportPropertyChanging("DeviceNumber");
-                _DeviceNumber = StructuralObject.SetValidValue(value, false, "DeviceNumber");
+                _DeviceNumber = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("DeviceNumber");
                 OnDeviceNumberChanged();
             }
@@ -3660,7 +3667,7 @@ namespace iTOLEDO.Models
             {
                 OnStationAliveChanging(value);
                 ReportPropertyChanging("StationAlive");
-                _StationAlive = StructuralObject.SetValidValue(value, "StationAlive");
+                _StationAlive = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("StationAlive");
                 OnStationAliveChanged();
             }
@@ -3684,7 +3691,7 @@ namespace iTOLEDO.Models
             {
                 OnRegistrationDateChanging(value);
                 ReportPropertyChanging("RegistrationDate");
-                _RegistrationDate = StructuralObject.SetValidValue(value, "RegistrationDate");
+                _RegistrationDate = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("RegistrationDate");
                 OnRegistrationDateChanged();
             }
@@ -3708,7 +3715,7 @@ namespace iTOLEDO.Models
             {
                 OnStationLocationChanging(value);
                 ReportPropertyChanging("StationLocation");
-                _StationLocation = StructuralObject.SetValidValue(value, true, "StationLocation");
+                _StationLocation = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("StationLocation");
                 OnStationLocationChanged();
             }
@@ -3732,7 +3739,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -3756,7 +3763,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -3780,7 +3787,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -3804,7 +3811,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -3815,6 +3822,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -3930,7 +3938,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3947,7 +3955,7 @@ namespace iTOLEDO.Models
             {
                 OnnameChanging(value);
                 ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, false, "name");
+                _name = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("name");
                 OnnameChanged();
             }
@@ -3971,7 +3979,7 @@ namespace iTOLEDO.Models
             {
                 Onprincipal_idChanging(value);
                 ReportPropertyChanging("principal_id");
-                _principal_id = StructuralObject.SetValidValue(value, "principal_id");
+                _principal_id = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("principal_id");
                 Onprincipal_idChanged();
             }
@@ -3997,7 +4005,7 @@ namespace iTOLEDO.Models
                 {
                     Ondiagram_idChanging(value);
                     ReportPropertyChanging("diagram_id");
-                    _diagram_id = StructuralObject.SetValidValue(value, "diagram_id");
+                    _diagram_id = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("diagram_id");
                     Ondiagram_idChanged();
                 }
@@ -4022,7 +4030,7 @@ namespace iTOLEDO.Models
             {
                 OnversionChanging(value);
                 ReportPropertyChanging("version");
-                _version = StructuralObject.SetValidValue(value, "version");
+                _version = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("version");
                 OnversionChanged();
             }
@@ -4046,7 +4054,7 @@ namespace iTOLEDO.Models
             {
                 OndefinitionChanging(value);
                 ReportPropertyChanging("definition");
-                _definition = StructuralObject.SetValidValue(value, true, "definition");
+                _definition = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("definition");
                 OndefinitionChanged();
             }
@@ -4057,6 +4065,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
     }
     
     /// <summary>
@@ -4088,7 +4097,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4107,7 +4116,7 @@ namespace iTOLEDO.Models
                 {
                     OnTrackingIDChanging(value);
                     ReportPropertyChanging("TrackingID");
-                    _TrackingID = StructuralObject.SetValidValue(value, "TrackingID");
+                    _TrackingID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("TrackingID");
                     OnTrackingIDChanged();
                 }
@@ -4132,7 +4141,7 @@ namespace iTOLEDO.Models
             {
                 OnPackingIDChanging(value);
                 ReportPropertyChanging("PackingID");
-                _PackingID = StructuralObject.SetValidValue(value, "PackingID");
+                _PackingID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("PackingID");
                 OnPackingIDChanged();
             }
@@ -4156,7 +4165,7 @@ namespace iTOLEDO.Models
             {
                 OnShippingIDChanging(value);
                 ReportPropertyChanging("ShippingID");
-                _ShippingID = StructuralObject.SetValidValue(value, "ShippingID");
+                _ShippingID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("ShippingID");
                 OnShippingIDChanged();
             }
@@ -4180,7 +4189,7 @@ namespace iTOLEDO.Models
             {
                 OnTrackingNumChanging(value);
                 ReportPropertyChanging("TrackingNum");
-                _TrackingNum = StructuralObject.SetValidValue(value, false, "TrackingNum");
+                _TrackingNum = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("TrackingNum");
                 OnTrackingNumChanged();
             }
@@ -4204,7 +4213,7 @@ namespace iTOLEDO.Models
             {
                 OnTrackingDateChanging(value);
                 ReportPropertyChanging("TrackingDate");
-                _TrackingDate = StructuralObject.SetValidValue(value, "TrackingDate");
+                _TrackingDate = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("TrackingDate");
                 OnTrackingDateChanged();
             }
@@ -4228,7 +4237,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -4252,7 +4261,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -4276,7 +4285,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -4300,7 +4309,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -4311,6 +4320,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -4418,7 +4428,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4437,7 +4447,7 @@ namespace iTOLEDO.Models
                 {
                     OnUserIDChanging(value);
                     ReportPropertyChanging("UserID");
-                    _UserID = StructuralObject.SetValidValue(value, "UserID");
+                    _UserID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("UserID");
                     OnUserIDChanged();
                 }
@@ -4462,7 +4472,7 @@ namespace iTOLEDO.Models
             {
                 OnRoleIdChanging(value);
                 ReportPropertyChanging("RoleId");
-                _RoleId = StructuralObject.SetValidValue(value, "RoleId");
+                _RoleId = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("RoleId");
                 OnRoleIdChanged();
             }
@@ -4486,7 +4496,7 @@ namespace iTOLEDO.Models
             {
                 OnUserFullNameChanging(value);
                 ReportPropertyChanging("UserFullName");
-                _UserFullName = StructuralObject.SetValidValue(value, true, "UserFullName");
+                _UserFullName = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("UserFullName");
                 OnUserFullNameChanged();
             }
@@ -4510,7 +4520,7 @@ namespace iTOLEDO.Models
             {
                 OnUserNameChanging(value);
                 ReportPropertyChanging("UserName");
-                _UserName = StructuralObject.SetValidValue(value, true, "UserName");
+                _UserName = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("UserName");
                 OnUserNameChanged();
             }
@@ -4534,7 +4544,7 @@ namespace iTOLEDO.Models
             {
                 OnUserAddressChanging(value);
                 ReportPropertyChanging("UserAddress");
-                _UserAddress = StructuralObject.SetValidValue(value, true, "UserAddress");
+                _UserAddress = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("UserAddress");
                 OnUserAddressChanged();
             }
@@ -4558,7 +4568,7 @@ namespace iTOLEDO.Models
             {
                 OnUserJoiningDateChanging(value);
                 ReportPropertyChanging("UserJoiningDate");
-                _UserJoiningDate = StructuralObject.SetValidValue(value, "UserJoiningDate");
+                _UserJoiningDate = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UserJoiningDate");
                 OnUserJoiningDateChanged();
             }
@@ -4582,7 +4592,7 @@ namespace iTOLEDO.Models
             {
                 OnUserPasswordChanging(value);
                 ReportPropertyChanging("UserPassword");
-                _UserPassword = StructuralObject.SetValidValue(value, true, "UserPassword");
+                _UserPassword = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("UserPassword");
                 OnUserPasswordChanged();
             }
@@ -4606,7 +4616,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -4630,7 +4640,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -4654,7 +4664,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -4678,7 +4688,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -4689,6 +4699,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -4850,7 +4861,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
-        #region Simple Properties
+        #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4869,7 +4880,7 @@ namespace iTOLEDO.Models
                 {
                     OnUserStationIDChanging(value);
                     ReportPropertyChanging("UserStationID");
-                    _UserStationID = StructuralObject.SetValidValue(value, "UserStationID");
+                    _UserStationID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("UserStationID");
                     OnUserStationIDChanged();
                 }
@@ -4894,7 +4905,7 @@ namespace iTOLEDO.Models
             {
                 OnStationIDChanging(value);
                 ReportPropertyChanging("StationID");
-                _StationID = StructuralObject.SetValidValue(value, "StationID");
+                _StationID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("StationID");
                 OnStationIDChanged();
             }
@@ -4918,7 +4929,7 @@ namespace iTOLEDO.Models
             {
                 OnUserIDChanging(value);
                 ReportPropertyChanging("UserID");
-                _UserID = StructuralObject.SetValidValue(value, "UserID");
+                _UserID = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UserID");
                 OnUserIDChanged();
             }
@@ -4942,7 +4953,7 @@ namespace iTOLEDO.Models
             {
                 OnLoginDateTimeChanging(value);
                 ReportPropertyChanging("LoginDateTime");
-                _LoginDateTime = StructuralObject.SetValidValue(value, "LoginDateTime");
+                _LoginDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("LoginDateTime");
                 OnLoginDateTimeChanged();
             }
@@ -4966,7 +4977,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedDateTimeChanging(value);
                 ReportPropertyChanging("CreatedDateTime");
-                _CreatedDateTime = StructuralObject.SetValidValue(value, "CreatedDateTime");
+                _CreatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedDateTime");
                 OnCreatedDateTimeChanged();
             }
@@ -4990,7 +5001,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedDateTimeChanging(value);
                 ReportPropertyChanging("UpdatedDateTime");
-                _UpdatedDateTime = StructuralObject.SetValidValue(value, "UpdatedDateTime");
+                _UpdatedDateTime = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("UpdatedDateTime");
                 OnUpdatedDateTimeChanged();
             }
@@ -5014,7 +5025,7 @@ namespace iTOLEDO.Models
             {
                 OnCreatedByChanging(value);
                 ReportPropertyChanging("CreatedBy");
-                _CreatedBy = StructuralObject.SetValidValue(value, "CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("CreatedBy");
                 OnCreatedByChanged();
             }
@@ -5038,7 +5049,7 @@ namespace iTOLEDO.Models
             {
                 OnUpdatedbyChanging(value);
                 ReportPropertyChanging("Updatedby");
-                _Updatedby = StructuralObject.SetValidValue(value, "Updatedby");
+                _Updatedby = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Updatedby");
                 OnUpdatedbyChanged();
             }
@@ -5049,6 +5060,7 @@ namespace iTOLEDO.Models
 
         #endregion
 
+    
         #region Navigation Properties
     
         /// <summary>
@@ -5133,4 +5145,5 @@ namespace iTOLEDO.Models
 
     #endregion
 
+    
 }

@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="x3v6Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="x3v6Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="x3v6ModelStoreContainer">
-          <EntitySet Name="Audit" EntityType="x3v6Model.Store.Audit" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ErrorLog" EntityType="x3v6Model.Store.ErrorLog" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Package" EntityType="x3v6Model.Store.Package" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PackageDetail" EntityType="x3v6Model.Store.PackageDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Roles" EntityType="x3v6Model.Store.Roles" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Shipping" EntityType="x3v6Model.Store.Shipping" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SKUImages" EntityType="x3v6Model.Store.SKUImages" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Station" EntityType="x3v6Model.Store.Station" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="x3v6Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Tracking" EntityType="x3v6Model.Store.Tracking" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="User" EntityType="x3v6Model.Store.User" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserStation" EntityType="x3v6Model.Store.UserStation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Audit" EntityType="x3v6Model.Store.Audit" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ErrorLog" EntityType="x3v6Model.Store.ErrorLog" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Package" EntityType="x3v6Model.Store.Package" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PackageDetail" EntityType="x3v6Model.Store.PackageDetail" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Roles" EntityType="x3v6Model.Store.Roles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Shipping" EntityType="x3v6Model.Store.Shipping" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SKUImages" EntityType="x3v6Model.Store.SKUImages" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Station" EntityType="x3v6Model.Store.Station" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sysdiagrams" EntityType="x3v6Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Tracking" EntityType="x3v6Model.Store.Tracking" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="User" EntityType="x3v6Model.Store.User" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UserStation" EntityType="x3v6Model.Store.UserStation" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="FK_Package_Shipping" Association="x3v6Model.Store.FK_Package_Shipping">
             <End Role="Shipping" EntitySet="Shipping" />
             <End Role="Package" EntitySet="Package" />
@@ -410,7 +410,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="x3v6Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="x3v6Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="x3v6Entities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Audits" EntityType="x3v6Model.Audit" />
           <EntitySet Name="ErrorLogs" EntityType="x3v6Model.ErrorLog" />
@@ -838,7 +838,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="x3v6ModelStoreContainer" CdmEntityContainer="x3v6Entities">
           <EntitySetMapping Name="Audits">
             <EntityTypeMapping TypeName="x3v6Model.Audit">
@@ -1068,7 +1068,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -1083,6 +1083,6 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams />
   </Designer>
 </edmx:Edmx>
