@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ExcelLogger.cs" />
+    <Compile Include="Classes\logFile.cs" />
     <Compile Include="Classes\Measures.cs" />
     <Compile Include="Classes\mPackage.cs" />
     <Compile Include="Classes\SplitMeasurString.cs" />
@@ -86,6 +87,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EmbeddedResource Include="Resources\ErrorLog.sys">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

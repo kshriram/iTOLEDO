@@ -16,10 +16,12 @@ namespace iTOLEDO.Classes
        public static Measures SplitTOLEDOstring(this string TOLEDOstring)
        {
            Measures _measures = new Measures();
+           //Log
+           logFile.Add("SplitTOLEDOstring(0) Function Call start", "SplitTOLEDOstring(0)");
            try
            {
-               String TempString = TOLEDOstring.Replace("\r","");//Last Chanractor Removed.
-               String[] _charSplit = TempString.Split(new char[] { '=', ';' });//Split string from multiple charactors.
+               String TempString = TOLEDOstring.Replace("\t","");//Last Chanractor Removed.
+               String[] _charSplit = TempString.Split(new char[] { '=', ';','?' });//Split string from multiple charactors.
                String[] _DimSplit = _charSplit[7].Split(new char[] { ',' });//7th charactor is Dimentions again split in to Height, length, Width
                _measures.PCKRowID = _charSplit[17];//17th Charactor is Packing number that is PCKROWID from Package Table.
                _measures.BoxLength = Convert.ToDouble(_DimSplit[0]);
@@ -28,8 +30,10 @@ namespace iTOLEDO.Classes
                _measures.BoxWeight = Convert.ToDouble(_charSplit[13]);
                _measures.BoxDimension =DateTime.Now.ToString("yyyy-MM-dd HH:MM:ss tt");
            }
-           catch (Exception)
-           {}
+           catch (Exception Ex)
+           {//Log
+               logFile.Add("SplitTOLEDOstring (1) Function Call start", Ex.ToString());
+           }
            return _measures;
        }
     }
