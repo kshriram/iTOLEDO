@@ -49,7 +49,6 @@ namespace iTOLEDO
 
                 Console.WriteLine("Application Connected to " + iTOLEDO.Properties.Settings.Default.PortName.ToString() + " Port");
                 readThread.Start();
-
                 readThread.Join();
                 _serialPort.Close();
 
@@ -77,12 +76,16 @@ namespace iTOLEDO
                 {
                     try
                     {
-                        
+                        if (!_serialPort.IsOpen)
+                        {
+                            _serialPort.Open();
+                        }
                         Console.WriteLine(Environment.NewLine+"DATA =" + _serialPort.ReadLine());
                         //Add to Log
                         logFile.Add("*Readind Data0", _serialPort.ReadLine());
 
                         string message = _serialPort.ReadLine();
+                      
                         Program _prg = new Program();
                         _prg._setDatabase();
                         Thread.Sleep(1000);
@@ -91,13 +94,13 @@ namespace iTOLEDO
                     {
                       
                         //Add to Log
-                        logFile.Add("Port Readind Data1", ex.ToString());
-
+                        logFile.Add("Port Readind Data1 TimeoutException", ex.ToString());
+                       // Console.WriteLine("Port is busy in another application please restart application after some time.");
                         ///Restatr appllication
                         //System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
                         // Closes the current process
                         //Environment.Exit(0); 
-                        Thread.Sleep(200);
+                        Thread.Sleep(2000);
                     }
                     catch (Exception ex1)
                     {
@@ -276,7 +279,7 @@ namespace iTOLEDO
 
                 stringFromTOLEDO = _serialPort.ReadLine();
                 //Split the string from TOLEDO and return measurement Objects.
-
+                _serialPort.Close();
                 Measures _tempMeasures = new Measures();
                 _tempMeasures = stringFromTOLEDO.SplitTOLEDOstring();
                 try
