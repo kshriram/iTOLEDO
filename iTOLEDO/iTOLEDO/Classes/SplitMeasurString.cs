@@ -21,7 +21,7 @@ namespace iTOLEDO.Classes
            try
            {
                String TempString = TOLEDOstring.Replace("\t","");//Last Chanractor Removed.
-               String[] _charSplit = TempString.Split(new char[] { '=', ';', '?', '¦' });//Split string from multiple charactors.
+               String[] _charSplit = TempString.Split(new char[] { '=', ';', '?', '¦','|' });//Split string from multiple charactors.
                String[] _DimSplit = _charSplit[7].Split(new char[] { ',' });//7th charactor is Dimentions again split in to Height, length, Width
                _measures.PCKRowID = _charSplit[17];//17th Charactor is Packing number that is PCKROWID from Package Table.
                _measures.BoxLength = Convert.ToDouble(_DimSplit[0]);
