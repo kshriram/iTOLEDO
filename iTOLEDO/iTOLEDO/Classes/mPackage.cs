@@ -31,8 +31,10 @@ namespace iTOLEDO.Classes
                x3ent.SaveChanges();
                _retutn = true;
            }
-           catch (Exception)
-           {}
+           catch (Exception ex)
+           {
+               logFile.Add("Save data Error:", ex.ToString());
+           }
            return _retutn;
        }
     }

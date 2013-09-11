@@ -44,7 +44,7 @@ namespace iTOLEDO
                 //Add to Log
                 logFile.Add("Port Opened" + iTOLEDO.Properties.Settings.Default.PortName.ToString(), "Main ()");
 
-                Console.WriteLine("Application Connected to " + iTOLEDO.Properties.Settings.Default.PortName.ToString() + " Port"+Environment.NewLine+"Please Wait reading Data.");
+                Console.WriteLine("Application Connected to " + iTOLEDO.Properties.Settings.Default.PortName.ToString() + " Port"+Environment.NewLine+"Waiting for data in Buffer.");
                 readThread.Start();
                 readThread.Join();
                 _serialPort.Close();
@@ -70,39 +70,44 @@ namespace iTOLEDO
                 {
                     try
                     {
-                        string message = _serialPort.ReadExisting();
+                        logFile.Add("--", "****--");
+                        string message = _serialPort.ReadLine();   
                         //Add to Log
-                        logFile.Add("*Readind Data0 ", message);
-                        if (message=="")
+                        logFile.Add("*Reading Data0 ", message);
+                        if (message == "")
                         {
                             Console.Write(".");
-                            Thread.Sleep(200);
                         }
                         else
                         {
                             Console.WriteLine(Environment.NewLine + "DATA := " + message);
+                            logFile.Add("**Data Received: ", message);
+                            stringFromTOLEDO = message;
+                            Program _prg = new Program();
+                            _prg._setDatabase();
+                            
                         }
-                        
-                        stringFromTOLEDO = message;
-                        Program _prg = new Program();
-                        _prg._setDatabase();
+                        Thread.Sleep(1000);
                     }
                     catch (TimeoutException ex)
                     {
+                       
                         //Add to Log
-                        logFile.Add("Port Readind Data1 TimeoutException", ex.ToString());
+                        logFile.Add("Port Reading Data1 TimeoutException", ex.ToString());
                         Thread.Sleep(2000);
                     }
                     catch (Exception ex1)
                     {
+                      
                         //Add to Log
-                        logFile.Add("Port Readind Data2", ex1.ToString());
+                        logFile.Add("Port Reading Data2", ex1.ToString());
                     }
                 }
                 catch (TimeoutException ex1)
                 {
+                    Console.Write(".");
                     //Add to Log
-                    logFile.Add("Port Readind Data3", ex1.ToString());
+                    logFile.Add("Port Reading Data3", ex1.ToString());
                     if (_serialPort.IsOpen)
                     {
                         _serialPort.Close();
@@ -130,8 +135,6 @@ namespace iTOLEDO
                 _tempMeasures = stringFromTOLEDO.SplitTOLEDOstring();
                 try
                 {
-                    if (_tempMeasures.PCKRowID != _measures.PCKRowID)
-                    {
                         //plit string to Measurement class format.
                         try
                         {
@@ -161,11 +164,6 @@ namespace iTOLEDO
 
                         Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxWeight);
                         Console.WriteLine("---------------------------------" + _savedFlag + "----------------------------------------");
-                    }
-                    else
-                    {
-                        logFile.Add("Same Data in buffer reading continue", "_setDatabase(0)");
-                    }
                 }
                 catch (NullReferenceException)
                 { //Log
