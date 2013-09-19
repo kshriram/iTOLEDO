@@ -70,7 +70,7 @@ namespace iTOLEDO
                 {
                     try
                     {
-                        logFile.Add("--", "****--");
+                        logFile.Add("", "" + "[" + DateTime.Now.ToString("MMM dd, yyyy hh:mm.ss tt") + "]" + "-----------------------------------------------------------------------");
                         string message = _serialPort.ReadLine();   
                         //Add to Log
                         logFile.Add("*Reading Data0 ", message);
@@ -89,25 +89,27 @@ namespace iTOLEDO
                         }
                         Thread.Sleep(1000);
                     }
-                    catch (TimeoutException)
+                    catch (TimeoutException ex2)
                     {
                        
                         //Add to Log
-                        logFile.Add("Port Reading Data1 TimeoutException","["+DateTime.Now.ToString("MMM dd, yyyy hh:mm tt")+"]");
+                        logFile.Add("Error- Port Reading Data1 TimeoutException",ex2.Message);
                         Thread.Sleep(2000);
                     }
-                    catch (Exception ex1)
+                    catch (Exception ex3)
                     {
                       
                         //Add to Log
-                        logFile.Add("Port Reading Data2", ex1.ToString());
+                        logFile.Add("Error- Port Reading Data2",  ex3.Message);
+                        Thread.Sleep(2000);
                     }
                 }
-                catch (TimeoutException ex1)
+                catch (TimeoutException Ex1)
                 {
                     Console.Write(".");
                     //Add to Log
-                    logFile.Add("Port Reading Data3", ex1.ToString());
+                    logFile.Add("Error- Port Reading Data3",  Ex1.Message);
+                    Thread.Sleep(2000);
                     if (_serialPort.IsOpen)
                     {
                         _serialPort.Close();
