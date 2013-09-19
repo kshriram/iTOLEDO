@@ -17,7 +17,7 @@ namespace iTOLEDO
         static SerialPort _serialPort;
         static Measures _measures;
         static String stringFromTOLEDO = "";
-        
+
         public static void Main()
         {
             try
@@ -44,7 +44,7 @@ namespace iTOLEDO
                 //Add to Log
                 logFile.Add("Port Opened" + iTOLEDO.Properties.Settings.Default.PortName.ToString(), "Main ()");
 
-                Console.WriteLine("Application Connected to " + iTOLEDO.Properties.Settings.Default.PortName.ToString() + " Port"+Environment.NewLine+"Waiting for data in Buffer.");
+                Console.WriteLine("Application Connected to " + iTOLEDO.Properties.Settings.Default.PortName.ToString() + " Port" + Environment.NewLine + "Waiting for data in Buffer.");
                 readThread.Start();
                 readThread.Join();
                 _serialPort.Close();
@@ -53,7 +53,7 @@ namespace iTOLEDO
             catch (Exception ex)
             {
                 //Add to Log
-                logFile.Add("Port Opening Error",ex.ToString() );
+                logFile.Add("Port Opening Error", ex.ToString());
                 Console.WriteLine("Opning COM port Error. Device is under use of another application. Or Check the Application settings.");
                 Thread.Sleep(10000);
             }
@@ -89,11 +89,11 @@ namespace iTOLEDO
                         }
                         Thread.Sleep(1000);
                     }
-                    catch (TimeoutException ex)
+                    catch (TimeoutException)
                     {
                        
                         //Add to Log
-                        logFile.Add("Port Reading Data1 TimeoutException", ex.ToString());
+                        logFile.Add("Port Reading Data1 TimeoutException","["+DateTime.Now.ToString("MMM dd, yyyy hh:mm tt")+"]");
                         Thread.Sleep(2000);
                     }
                     catch (Exception ex1)
@@ -124,7 +124,6 @@ namespace iTOLEDO
         {
             try
             {
-               
                 //Log
                 logFile.Add("_setDatabase Function Call start", "_setDatabase(0)");
 
@@ -135,35 +134,34 @@ namespace iTOLEDO
                 _tempMeasures = stringFromTOLEDO.SplitTOLEDOstring();
                 try
                 {
-                        //plit string to Measurement class format.
-                        try
-                        {
-                            _measures = stringFromTOLEDO.SplitTOLEDOstring();
-                        }
-                        catch (Exception)
-                        {
-                            Console.WriteLine("String Split Error");
-                            logFile.Add("String Split Error", "_setDatabase(0)");
-                        }
-                        
-                        //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                        Boolean _savedFlag = mPackage.setPackageInfo(_measures);
-                        logFile.Add("_save", "Data Save '" + _savedFlag + "'");
+                    //plit string to Measurement class format.
+                    try
+                    {
+                        _measures = stringFromTOLEDO.SplitTOLEDOstring();
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("String Split Error");
+                        logFile.Add("String Split Error", "_setDatabase(0)");
+                    }
 
-                        //Save Log to the Ecxel File.
-                        try
-                        {
-                            ExcelLogger Exel = new ExcelLogger(stringFromTOLEDO, _savedFlag);
-                        }
-                        catch (Exception)
-                        {
-                            Console.WriteLine("Excel file writing");
-                            logFile.Add("Excel file writing", "_setDatabase(0)");
-                        }
-                        
+                    //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
+                    Boolean _savedFlag = mPackage.setPackageInfo(_measures);
+                    logFile.Add("_save", "Data Save '" + _savedFlag + "'");
 
-                        Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxWeight);
-                        Console.WriteLine("---------------------------------" + _savedFlag + "----------------------------------------");
+                    //Save Log to the Ecxel File.
+                    try
+                    {
+                        ExcelLogger Exel = new ExcelLogger(stringFromTOLEDO, _savedFlag);
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Excel file writing");
+                        logFile.Add("Excel file writing", "_setDatabase(0)");
+                    }
+
+                    Console.WriteLine("\nPackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
+                    Console.WriteLine("-----------------------Save in Database= " + _savedFlag + " ------------------------------");
                 }
                 catch (NullReferenceException)
                 { //Log
@@ -177,7 +175,7 @@ namespace iTOLEDO
                         Console.WriteLine("String Split Error @ Chach Null Rererence");
                         logFile.Add("String Split Error", "_setDatabase(1)");
                     }
-                        
+
                     //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
                     Boolean _savedFlag = mPackage.setPackageInfo(_measures);
                     logFile.Add("_save", "Data Save '" + _savedFlag + "'");
@@ -192,8 +190,8 @@ namespace iTOLEDO
                         logFile.Add("Excel file writing", "_setDatabase(1)");
                     }
 
-                    Console.WriteLine("PackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + " Box length= " + _tempMeasures.BoxLength + Environment.NewLine + " Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + " Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + " Box Weight=" + _tempMeasures.BoxWeight);
-                    Console.WriteLine("---------------------------------" + _savedFlag + "----------------------------------------");
+                    Console.WriteLine("\nPackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
+                    Console.WriteLine("----------------------- Save in Database= " + _savedFlag + " -------------------------------");
                 }
             }
             catch (Exception)
