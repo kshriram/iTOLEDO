@@ -12,7 +12,6 @@ namespace iTOLEDO
 {
     class Program
     {
-
         static bool _continue;
         static SerialPort _serialPort;
         static Measures _measures;
@@ -22,7 +21,6 @@ namespace iTOLEDO
         {
             try
             {
-
                 StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
                 Thread readThread = new Thread(Read);
 
@@ -163,7 +161,15 @@ namespace iTOLEDO
                     }
 
                     Console.WriteLine("\nPackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
-                    Console.WriteLine("-----------------------Save in Database= " + _savedFlag + " ------------------------------");
+                    if (_savedFlag == false)
+                    {
+                        Console.WriteLine(Environment.NewLine + "**Error: Record saving in database fail because of incorrect packing ID");
+                        Console.WriteLine("-------------------------------------------------------------------");
+                    }
+                    else
+                    {
+                        Console.WriteLine("-----------------------Record saved. ------------------------------");
+                    }
                 }
                 catch (NullReferenceException)
                 { //Log
@@ -193,7 +199,15 @@ namespace iTOLEDO
                     }
 
                     Console.WriteLine("\nPackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
-                    Console.WriteLine("----------------------- Save in Database= " + _savedFlag + " -------------------------------");
+                    if (_savedFlag == false)
+                    {
+                        Console.WriteLine(Environment.NewLine+"**Error: Record saving in database fail because of incorrect packing ID");
+                        Console.WriteLine("------------------------------------------------------------------");
+                    }
+                    else
+                    {
+                        Console.WriteLine("-----------------------Record saved. ------------------------------");
+                    }
                 }
             }
             catch (Exception)
