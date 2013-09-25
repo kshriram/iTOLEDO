@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace iTOLEDO.Classes
 {
-   public static class mPackage
+   public static class mBox
     {
        /// <summary>
        /// Set the Package information to the Database
@@ -22,8 +22,8 @@ namespace iTOLEDO.Classes
            Boolean _retutn = false;
            try
            {
-               Package _rPackage = x3ent.Packages.SingleOrDefault(i => i.PCKROWID == TMeasures.PCKRowID);
-               _rPackage.BoxDimension =TMeasures.BoxDimension;
+               BoxPackage _rPackage = x3ent.BoxPackages.SingleOrDefault(i => i.BOXNUM == TMeasures.BOXNUM);
+               _rPackage.BoxMeasurementTime =Convert.ToDateTime( TMeasures.BoxDimension);
                _rPackage.BoxLength =TMeasures. BoxLength;
                _rPackage.BoxWidth = TMeasures.BoxWidth;
                _rPackage.BoxHeight = TMeasures.BoxHeight;

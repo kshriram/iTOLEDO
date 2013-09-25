@@ -55,7 +55,7 @@
     <Compile Include="Classes\ExcelLogger.cs" />
     <Compile Include="Classes\logFile.cs" />
     <Compile Include="Classes\Measures.cs" />
-    <Compile Include="Classes\mPackage.cs" />
+    <Compile Include="Classes\mBox.cs" />
     <Compile Include="Classes\SplitMeasurString.cs" />
     <Compile Include="Models\ShippingManager.Designer.cs">
       <AutoGen>True</AutoGen>

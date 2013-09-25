@@ -13,7 +13,7 @@ namespace iTOLEDO.Classes
     /// </summary>
     public class Measures
     {
-        public String PCKRowID { get; set; }
+        public String BOXNUM { get; set; }
         public String BoxDimension { get; set; }
         public Double BoxLength { get; set; }
         public Double BoxWidth { get; set; }

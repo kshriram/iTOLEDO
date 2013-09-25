@@ -37,7 +37,7 @@ namespace iTOLEDO.Classes
                    {
                        try
                        {
-                           _measures.PCKRowID = _charSplit[i + 1].Substring(0, 11);
+                           _measures.BOXNUM = _charSplit[i + 1].Substring(0, 11);
                        }
                        catch (Exception)
                        {
@@ -60,7 +60,6 @@ namespace iTOLEDO.Classes
            catch (Exception Ex)
            {//Log
                logFile.Add("SplitTOLEDOstring (1) Function Call start", Ex.Message);
-              
            }
            return _measures;
        }

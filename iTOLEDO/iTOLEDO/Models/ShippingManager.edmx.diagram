@@ -4,30 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="939a3d5549c2439ab3aba6a5aa6af02f" Name="Diagram1">
-        <EntityTypeShape EntityType="x3v6Model.Audit" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.ErrorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.Package" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.PackageDetail" Width="1.5" PointX="9.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.Role" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.Shipping" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.SKUImage" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.Station" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.Tracking" Width="1.5" PointX="12.75" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.User" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="x3v6Model.UserStation" Width="1.5" PointX="10.5" PointY="11.5" IsExpanded="true" />
-        <AssociationConnector Association="x3v6Model.FK_UserLogs_User" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_Package_Shipping" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_Package_Station" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_Package_User" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_PackageDetail_Package" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_Tracking_Package" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_User_Roles" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_Tracking_Shipping" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_Station_User" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_tblUserStation_tblStationMaster" ManuallyRouted="false" />
-        <AssociationConnector Association="x3v6Model.FK_UserStation_User" ManuallyRouted="false" />
+      <Diagram DiagramId="939a3d5549c2439ab3aba6a5aa6af02f" Name="Diagram1" ZoomLevel="21">
+        <EntityTypeShape EntityType="x3v6Model.Audit" Width="1.5" PointX="5.8767582093722925" PointY="10.463704203471403" />
+        <EntityTypeShape EntityType="x3v6Model.BoxPackage" Width="1.5" PointX="1.0909422492100589" PointY="24.26104317245122" />
+        <EntityTypeShape EntityType="x3v6Model.ErrorLog" Width="1.5" PointX="4.4603478277383131" PointY="28.034305704773548" />
+        <EntityTypeShape EntityType="x3v6Model.Package" Width="1.5" PointX="1.6806273598599373" PointY="6.83933694979145" />
+        <EntityTypeShape EntityType="x3v6Model.PackageDetail" Width="1.5" PointX="7.0960273179672786" PointY="2.6407610190290778" />
+        <EntityTypeShape EntityType="x3v6Model.Role" Width="1.5" PointX="0.49359438591338434" PointY="26.706813452163157" />
+        <EntityTypeShape EntityType="x3v6Model.Shipping" Width="1.5" PointX="6.8920694174673738" PointY="15.908718593376092" />
+        <EntityTypeShape EntityType="x3v6Model.SKUImage" Width="1.5" PointX="8.7951485704608015" PointY="20.736100176692055" />
+        <EntityTypeShape EntityType="x3v6Model.Station" Width="1.5" PointX="11.78427722667543" PointY="18.091824808200741" />
+        <EntityTypeShape EntityType="x3v6Model.sysdiagram" Width="1.5" PointX="0.73535352979570323" PointY="14.075468367932118" />
+        <EntityTypeShape EntityType="x3v6Model.Tracking" Width="1.5" PointX="7.2659329153904384" PointY="26.912468207493642" />
+        <EntityTypeShape EntityType="x3v6Model.User" Width="1.5" PointX="5.9221821790198712" PointY="3.9080930519421089" />
+        <EntityTypeShape EntityType="x3v6Model.UserStation" Width="1.5" PointX="9.9433759981502661" PointY="24.282535042745309" />
+        <EntityTypeShape EntityType="x3v6Model.Get_Shipping_Data" Width="1.5" PointX="9.8366839149206342" PointY="13.710683054155988" />
+        <EntityTypeShape EntityType="x3v6Model.Shipping_Box_Data" Width="1.5" PointX="9.4277886214795465" PointY="12.310160776744672" />
+        <EntityTypeShape EntityType="x3v6Model.Shipping_Box_Data_FEDEX" Width="1.5" PointX="9.3157885471898076" PointY="3.3718293473924645" />
+        <EntityTypeShape EntityType="x3v6Model.Shipping_Box_Data_UPS" Width="1.5" PointX="1.8978886706279075" PointY="16.306350506984792" />
+        <AssociationConnector Association="x3v6Model.FK_UserLogs_User" />
+        <AssociationConnector Association="x3v6Model.FK_BoxPackage_Package" />
+        <AssociationConnector Association="x3v6Model.FK_Package_Shipping" />
+        <AssociationConnector Association="x3v6Model.FK_Package_Station" />
+        <AssociationConnector Association="x3v6Model.FK_Package_User" />
+        <AssociationConnector Association="x3v6Model.FK_PackageDetail_Package" />
+        <AssociationConnector Association="x3v6Model.FK_Tracking_Package" />
+        <AssociationConnector Association="x3v6Model.FK_User_Roles" />
+        <AssociationConnector Association="x3v6Model.FK_Tracking_Shipping" />
+        <AssociationConnector Association="x3v6Model.FK_Station_User" />
+        <AssociationConnector Association="x3v6Model.FK_tblUserStation_tblStationMaster" />
+        <AssociationConnector Association="x3v6Model.FK_UserStation_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

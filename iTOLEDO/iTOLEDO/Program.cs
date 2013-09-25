@@ -146,7 +146,7 @@ namespace iTOLEDO
                     }
 
                     //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                    Boolean _savedFlag = mPackage.setPackageInfo(_measures);
+                    Boolean _savedFlag = mBox.setPackageInfo(_measures);
                     logFile.Add("_save", "Data Save '" + _savedFlag + "'");
 
                     //Save Log to the Ecxel File.
@@ -160,7 +160,7 @@ namespace iTOLEDO
                         logFile.Add("Excel file writing", "_setDatabase(0)");
                     }
 
-                    Console.WriteLine("\nPackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
+                    Console.WriteLine("\nPackageID= " + _tempMeasures.BOXNUM.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
                     if (_savedFlag == false)
                     {
                         Console.WriteLine(Environment.NewLine + "**Error: Record saving in database fail because of incorrect packing ID");
@@ -185,7 +185,7 @@ namespace iTOLEDO
                     }
 
                     //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                    Boolean _savedFlag = mPackage.setPackageInfo(_measures);
+                    Boolean _savedFlag = mBox.setPackageInfo(_measures);
                     logFile.Add("_save", "Data Save '" + _savedFlag + "'");
 
                     try
@@ -198,10 +198,10 @@ namespace iTOLEDO
                         logFile.Add("Excel file writing", "_setDatabase(1)");
                     }
 
-                    Console.WriteLine("\nPackageID= " + _tempMeasures.PCKRowID.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
+                    Console.WriteLine("\nBOX NUMBER = " + _tempMeasures.BOXNUM.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
                     if (_savedFlag == false)
                     {
-                        Console.WriteLine(Environment.NewLine+"**Error: Record saving in database fail because of incorrect packing ID");
+                        Console.WriteLine(Environment.NewLine+"**Error: Record saving in database fail because of incorrect BOX NUMBER");
                         Console.WriteLine("------------------------------------------------------------------");
                     }
                     else
