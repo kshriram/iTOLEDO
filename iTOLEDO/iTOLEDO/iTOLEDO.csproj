@@ -53,10 +53,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ExcelLogger.cs" />
+    <Compile Include="Classes\Global.cs" />
+    <Compile Include="Classes\iSaveToDatabase.cs" />
     <Compile Include="Classes\logFile.cs" />
     <Compile Include="Classes\Measures.cs" />
     <Compile Include="Classes\mBox.cs" />
+    <Compile Include="Classes\mShipmant.cs" />
     <Compile Include="Classes\SplitMeasurString.cs" />
+    <Compile Include="Models\RealX3edmx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RealX3edmx.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ShippingManager.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +89,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ShippingManager.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Models\RealX3edmx.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RealX3edmx.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\RealX3edmx.edmx.diagram">
+      <DependentUpon>RealX3edmx.edmx</DependentUpon>
+    </None>
     <None Include="Models\ShippingManager.edmx.diagram">
       <DependentUpon>ShippingManager.edmx</DependentUpon>
     </None>

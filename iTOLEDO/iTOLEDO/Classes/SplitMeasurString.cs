@@ -26,7 +26,9 @@ namespace iTOLEDO.Classes
                String TempString = TOLEDOstring.Replace("\t","");//Last Chanractor Removed.
                String[] _DimSplit=null;
                String[] _charSplit = TempString.Split(new char[] { '=', ';', '¦', '|', '?', '♥', '☻', '♥' });//Split string from multiple charactors.
-
+               
+               //Set always box number is scanning
+               Global.IsBoxNumber = true;
                for (int i = 0; i < _charSplit.Count()-1; i++)
                {
                    if (_charSplit[i].Contains("DIM"))
@@ -37,7 +39,18 @@ namespace iTOLEDO.Classes
                    {
                        try
                        {
-                           _measures.BOXNUM = _charSplit[i + 1].Substring(0, 11);
+                           if (_charSplit[i + 1].Contains("BOX"))
+                           {
+
+                               _measures.BOXNUM = _charSplit[i + 1].Substring(0, 11);
+                           }
+                           else
+                           {
+                               //Set Box Number not scanned.
+                               Global.IsBoxNumber = false;
+                               _measures.BOXNUM = _charSplit[i + 1];
+                           }
+
                        }
                        catch (Exception)
                        {

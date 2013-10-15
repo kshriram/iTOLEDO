@@ -124,6 +124,12 @@ namespace iTOLEDO
         {
             try
             {
+                //Box Model Object.
+                mBox _mBox = new mBox();
+
+                //model Shipment Save
+                mShipmant _mSHNum = new mShipmant();
+
                 //Log
                 logFile.Add("_setDatabase Function Call start", "_setDatabase(0)");
 
@@ -146,8 +152,19 @@ namespace iTOLEDO
                     }
 
                     //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                    Boolean _savedFlag = mBox.setPackageInfo(_measures);
-                    logFile.Add("_save", "Data Save '" + _savedFlag + "'");
+                    Boolean _savedFlag = false;
+                    if (Global.IsBoxNumber)
+                    {
+                        _savedFlag = _mBox.setPackageInfo(_measures);
+                        logFile.Add("_save", "Data Save '" + _savedFlag + "'");
+                    }
+                    else
+                    {
+                       _savedFlag = _mSHNum.setPackageInfo(_measures);
+                        logFile.Add("_save", "Data Save '" + _savedFlag + "'");
+                    }
+                    
+                  
 
                     //Save Log to the Ecxel File.
                     try
@@ -185,7 +202,22 @@ namespace iTOLEDO
                     }
 
                     //Measurement Object Passed to the Save Database Fucntion That save the Measurements to Packing ID.
-                    Boolean _savedFlag = mBox.setPackageInfo(_measures);
+
+                    Boolean _savedFlag = false;
+                    
+                    //save in Shipment diamention table or Box Information table depend on Global.IsBoxNum;
+                    if (Global.IsBoxNumber)
+                    {
+                        _savedFlag = _mBox.setPackageInfo(_measures);
+                        logFile.Add("_save", "Data Save '" + _savedFlag + "'");
+                    }
+                    else
+                    {
+                        _savedFlag = _mSHNum.setPackageInfo(_measures);
+                        logFile.Add("_save", "Data Save '" + _savedFlag + "'");
+                    }
+
+
                     logFile.Add("_save", "Data Save '" + _savedFlag + "'");
 
                     try

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace iTOLEDO.Classes
 {
-   public static class mBox
+   public class mBox : iSaveToDatabase
     {
        /// <summary>
        /// Set the Package information to the Database
        /// </summary>
        /// <param name="TMeasures">Measurements came from the machin</param>
        /// <returns>Tru if save successfully else fail</returns>
-       public static Boolean setPackageInfo(Measures TMeasures )
+       public override Boolean setPackageInfo(Measures TMeasures )
        {
            x3v6Entities x3ent = new x3v6Entities();
            Boolean _retutn = false;
