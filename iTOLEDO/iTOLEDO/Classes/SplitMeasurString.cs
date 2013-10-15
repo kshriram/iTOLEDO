@@ -48,7 +48,7 @@ namespace iTOLEDO.Classes
                            {
                                //Set Box Number not scanned.
                                Global.IsBoxNumber = false;
-                               _measures.BOXNUM = _charSplit[i + 1];
+                               _measures.BOXNUM = _charSplit[i + 1].Substring(0,9);
                            }
 
                        }
