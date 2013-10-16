@@ -16,18 +16,21 @@ namespace iTOLEDO.Classes
            {
                String Datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm tt");
 
-               try
+               int id2 = 0;
+
+               id2 = x3ent.ExecuteStoreCommand("UPDATE [dbo].[shipmentDimensions] set [weight]='" + measurements.BoxWeight + "',[height]='" + measurements.BoxHeight + "',[width]='" + measurements.BoxWidth + "',[length]='" + measurements.BoxLength + "',[datecreated]='" + Datetime + "' WHERE [ShipmentNumber]='" + measurements.BOXNUM + "';");
+               x3ent.SaveChanges();
+               if(id2>0)
+               _retutn = true;
+
+               if (id2 == 0)
                {
-                   x3ent.ExecuteStoreCommand("UPDATE [dbo].[shipmentDimensions] set [weight]='" + measurements.BoxWeight + "',[height]='" + measurements.BoxHeight + "',[width]='" + measurements.BoxWidth + "',[lenght]='" + measurements.BoxLength + "',[datecreated]='" + Datetime + "' WHERE [ShipmentNumber]='" + measurements.BOXNUM + "';");
+                   int id = x3ent.ExecuteStoreCommand("INSERT INTO [dbo].[shipmentDimensions]([ShipmentNumber],[weight],[height],[width],[length],[datecreated]) VALUES('" + measurements.BOXNUM + "','" + measurements.BoxWeight + "','" + measurements.BoxHeight + "','" + measurements.BoxWidth + "','" + measurements.BoxLength + "','" + Datetime + "');");
+                   x3ent.SaveChanges();
+                   if (id>0)
                    _retutn = true;
                }
-               catch (Exception)
-               {
-                   x3ent.ExecuteStoreCommand("INSERT INTO [dbo].[shipmentDimensions]([ShipmentNumber],[weight],[height],[width],[lenght],[datecreated]) VALUES('" + measurements.BOXNUM + "','" + measurements.BoxWeight + "','" + measurements.BoxHeight + "','" + measurements.BoxWidth + "','" + measurements.BoxLength + "','" + Datetime + "');");
-                   _retutn = true;
-               }
-               
-              
+
            }
            catch (Exception ex)
            {
