@@ -44,11 +44,11 @@ namespace iTOLEDO.Classes
 
                                _measures.BOXNUM = _charSplit[i + 1].Substring(0, 11);
                            }
-                           else
+                           else if (_charSplit[i + 1].Contains("SH"))
                            {
                                //Set Box Number not scanned.
                                Global.IsBoxNumber = false;
-                               _measures.BOXNUM = _charSplit[i + 1].Substring(0,9);
+                               _measures.BOXNUM = _charSplit[i + 1].Substring(0, 9);
                            }
 
                        }

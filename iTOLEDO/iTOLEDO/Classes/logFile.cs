@@ -21,7 +21,7 @@ namespace iTOLEDO.Classes
             {
                 String[] _Line = new string[1];
                 _Line[0] = Error+" "+ErrorLocation;
-                File.AppendAllLines(Environment.CurrentDirectory + "\\Resources\\ErrorLog.sys", _Line);
+                File.AppendAllLines(Environment.CurrentDirectory + "\\Resources\\ErrorLog.txt", _Line);
                 _return = true;
             }
             catch(Exception) { }

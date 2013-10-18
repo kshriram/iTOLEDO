@@ -21,6 +21,8 @@ namespace iTOLEDO
         {
             try
             {
+               
+
                 StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
                 Thread readThread = new Thread(Read);
 
@@ -140,7 +142,7 @@ namespace iTOLEDO
                 _tempMeasures = stringFromTOLEDO.SplitTOLEDOstring();
                 try
                 {
-                    //plit string to Measurement class format.
+                    //split string to Measurement class format.
                     try
                     {
                         _measures = stringFromTOLEDO.SplitTOLEDOstring();
@@ -182,6 +184,7 @@ namespace iTOLEDO
                     {
                         Console.WriteLine(Environment.NewLine + "**Error: Record saving in database fail because of incorrect packing ID");
                         Console.WriteLine("-------------------------------------------------------------------");
+                        mEmail.Send("String From Toledo : " + stringFromTOLEDO + Environment.NewLine + "\nPackageID= " + _tempMeasures.BOXNUM.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
                     }
                     else
                     {
@@ -235,6 +238,7 @@ namespace iTOLEDO
                     {
                         Console.WriteLine(Environment.NewLine+"**Error: Record saving in database fail because of incorrect BOX NUMBER");
                         Console.WriteLine("------------------------------------------------------------------");
+                        mEmail.Send("String From Toledo : " + stringFromTOLEDO + Environment.NewLine + "\nPackageID= " + _tempMeasures.BOXNUM.ToString() + Environment.NewLine + "Box length= " + _tempMeasures.BoxLength + Environment.NewLine + "Box Width= " + _tempMeasures.BoxWidth + Environment.NewLine + "Box heigh=" + _tempMeasures.BoxHeight + Environment.NewLine + "Box Weight=" + _tempMeasures.BoxWeight);
                     }
                     else
                     {

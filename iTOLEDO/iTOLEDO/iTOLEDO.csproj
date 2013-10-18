@@ -58,6 +58,7 @@
     <Compile Include="Classes\logFile.cs" />
     <Compile Include="Classes\Measures.cs" />
     <Compile Include="Classes\mBox.cs" />
+    <Compile Include="Classes\mEmail.cs" />
     <Compile Include="Classes\mShipmant.cs" />
     <Compile Include="Classes\SplitMeasurString.cs" />
     <Compile Include="Models\RealX3edmx.Designer.cs">
@@ -104,9 +105,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EmbeddedResource Include="Resources\ErrorLog.sys">
+    <Content Include="Resources\ErrorLog.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
